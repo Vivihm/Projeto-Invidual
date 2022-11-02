@@ -35,3 +35,20 @@ body{
     color: black;
     cursor: pointer;
 }
+
+/* HOME */
+
+#home {
+    display: flex;
+    flex-direction: row;
+    padding: 2vw;
+}
+
+.img_chamada img{
+    border-radius: 2vw;
+    margin: 5vw;
+}
+
+.chamada{
+    margin: 5vw;
+}

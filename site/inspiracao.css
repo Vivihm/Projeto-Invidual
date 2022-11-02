@@ -3,6 +3,20 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.filtro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filtro select{
+    padding: 0.6vw;
+    border: solid 2px black;
+    border-color: black;
+    border-radius: 0.7vw;
+}
+
 /* INSPIRACAO */
 img{
     max-width: 100%;
