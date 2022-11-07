@@ -1,0 +1,93 @@
+body{
+    margin: 0%;
+    font-family: 'Barlow', sans-serif;
+}
+
+/* HEADER */
+.header{
+    background-color: #f3baba;
+    display: flex;
+    color: black;
+    border-bottom: solid 5px black;
+    justify-content: space-around;
+    align-items: center;
+    
+    /* position: fixed; */
+}
+
+#logo a{
+    text-decoration: none;
+    color: black;
+    
+}
+.navbar{
+    display: flex;
+
+}
+
+.navbar ul {
+    display: flex;    
+    justify-content: space-between;
+}
+
+.navbar ul li {
+    list-style: none;
+    margin: 0.1vw 0.7vw;
+}
+.navbar ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+/* PESQUISA */
+.barrapesquisa{
+    padding: 0.8vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pesquisa input{
+    padding: 0.6vw;
+    border: solid 2px black;
+    border-color: black;
+    border-radius: 0.7vw;
+    width: 50vw;
+    margin: 1vw;
+}
+
+.filtro{
+    margin: 1vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.filtro select{
+    padding: 0.6vw;
+    border: solid 2px black;
+    border-color: black;
+    border-radius: 0.7vw;
+}
+
+/* INSPIRACAO */
+img{
+    max-width: 100%;
+    border-radius: 1vw;
+    margin-bottom: 0.6vw;
+}
+img:hover{
+    cursor: pointer;
+}
+
+#div_inspiracao{
+    display: flex;
+    align-items: center;
+}
+
+.imagens {
+    margin: 3.8vw;
+    columns: 5 50px;
+    column-gap: 0.6vw;
+}

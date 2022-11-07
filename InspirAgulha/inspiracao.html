@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inspiracao.css">
+
+    <!-- FONTE DO GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;600&display=swap" rel="stylesheet">
+    <!-- ---------------------------------------- -->
+
+    <title>Inspire-se</title>
+</head>
+
+<body>
+    <div class="header">
+        <div id="logo"><a href="home.html"><b>InspiraAgu</b></a></div>
+        <div class="navbar">
+            <ul>
+                <li><a href="tutoriais.html">TUTORIAIS</a></li>
+                <li>|</li>
+                <div style="background-color: white; padding: 0.1vw;">
+                    <li><a href="inspiracao.html">INSPIRE-SE</a></li>
+                </div>
+                <li>|</li>
+                <li><a href="ranking.html">RANKING DA SEMANA</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- PESQUISA -->
+    <div class="barrapesquisa">
+        <div class="pesquisa">
+            <input placeholder="pesquisar" type="text" id="in_pesquisa">
+        </div>
+        <div class="filtro">
+            <div class="selecao">
+                <select id="sel_peca" onchange="tipo()">
+                    <option value="">Tipo</option>
+                    <option value="1">Acessórios</option>
+                    <option value="2">Bolsas</option>
+                    <option value="3">Roupas</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOTOS INSPIRAÇÃO -->
+    <div id="div_inspiracao">
+        <div class="imagens">
+
+            <img src="./img/3a0584eb2a14b78aee93c8fd956a8ba5.jpg" id="1">
+            <img src="./img/404a1b2fd63f02648f446e7f48e4ed14.jpg" id="1">
+            <img src="./img/40d185bf55446c11f6a0c3efbc573904.jpg" id="2">
+            <img src="./img/61c9904a691848b77c82e955d8d5a2ac.jpg" id="3">
+            <img src="./img/9b5dd18a58ba54e9a9e620395cc6b472.jpg" id="2">
+            <img src="./img/a12e581df3b56877a8ce005c060e0566.jpg" id="1">
+            <img src="./img/d5c8996f58b949a82842a9086db3bd29.jpg">
+            <img src="./img/e649879cdcf29c1b63b778a10aa3fb5c.jpg">
+            <img src="./img/cb17796926ca5c3f6bc9e69788eb57e5.jpg">
+            <img src="./img/b14ec146bf0e081c67b244131751fae0.jpg">
+            <img src="./img/ebac26b553da7241bdd4cfb29f4b1ae7.jpg">
+            <img src="./img/a1cab2c8ce63dfad1def0ffd96ebfaa1.jpg">
+            <img src="">
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var imagens = []
+
+    function tipo() {
+        var tipo = sel_tipo.value
+
+        imagens.push()
+        if (tipo == 1) {
+            div_inspiracao.innerHTML += ''
+        } else if (tipo == 2) {
+
+        } else if (tipo == 3) {
+
+        }
+
+    } 
+</script>
