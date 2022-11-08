@@ -40,35 +40,17 @@ body{
     color: black;
 }
 
-/* PESQUISA */
-.barrapesquisa{
+/* FILTRO */
+
+h2{
+    text-align: center;
+}
+.filtro{
     padding: 0.8vw;
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
-}
-
-.pesquisa input{
-    padding: 0.6vw;
-    border: solid 2px black;
-    border-color: black;
-    border-radius: 0.7vw;
-    width: 50vw;
-    margin: 1vw;
-}
-
-.filtro{
-    margin: 1vw;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-.filtro select{
-    padding: 0.6vw;
-    border: solid 2px black;
-    border-color: black;
-    border-radius: 0.7vw;
 }
 
 /* INSPIRACAO */
