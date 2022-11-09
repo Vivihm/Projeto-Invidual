@@ -68,7 +68,7 @@ img:hover{
     align-items: center;
 }
 
-.imagens {
+#div_imagens {
     margin: 3.8vw;
     columns: 5 50px;
     column-gap: 0.6vw;
