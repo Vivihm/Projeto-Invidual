@@ -46,7 +46,7 @@ html{
     display: flex;
     align-items: center;
     justify-content: end;
-    background-image: url(./img/fun.jpg);
+    background-image: url(../img/fun.jpg);
     height: 45vw;
     background-size: cover;
     background-position: center;
@@ -82,7 +82,7 @@ html{
 
 /* OQUE */
 #oque{
-    background-image: url(./img/fundo2_Prancheta\ 1.jpg);
+    background-image: url(../img/listras.jpg);
     padding: 3vw 10vw;
 }
 
