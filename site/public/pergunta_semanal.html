@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/inspiracao.css">
+    <link rel="stylesheet" href="./css/pergunta_semanal.css">
+
+    <script src="./js/funcoes.js"></script>
+
+<!-- CHART JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- FONTE DO GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;600&display=swap" rel="stylesheet">
+    <!-- ---------------------------------------- -->
+
+    <title>Pergunta da semana</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <div class="header">
+        <div id="logo"><a href="index.html"><b>InspiraAgu</b></a></div>
+        <div class="navbar">
+            <ul>
+                <li><a href="tutoriais.html">TUTORIAIS</a></li>
+                <li>|</li>
+                <li><a href="inspiracao.html">INSPIRE-SE</a></li>
+                <li>|</li>
+                <div style="background-color: white; padding: 0.1vw; border-radius: 0.5vw;">
+                    <li><a href="pergunta_semanal.html">PERGUNTA DA SEMANA</a></li>
+                </div>
+                <li><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- PERGUNTA SEMANAL -->
+    <div id="div_pergunta">
+        <div class="questao">
+            <h3>Qual é a sua maior dificuldade na hora de começar um projeto novo?</h3>
+        </div>
+        <div class="opcoes">
+            <div class="opcao" value="1">Decidir o que fazer</div>
+            <div class="opcao" value="2">Saber como fazer</div>
+            <div class="opcao" value="3">Escolha de cores e lãs</div>
+        </div>
+
+
+        <button class="botao" onclick="responder()">Responder</button>
+    </div>
+
+    <!-- COMENTÁRIOS -->
+
+
+    <script>
+        var opcoes = [
+          'Decidir o que fazer',
+          'Saber como fazer',
+          'Escolha de cores e lãs',
+        ];
+      
+        var data = {
+          labels: opcoes,
+          datasets: [{
+            label: 'Resultado',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [3, 10, 5,],
+          }]
+        };
+      
+        var config = {
+          type: 'bar',
+          data: data,
+          options: {}
+        };
+      </script>
+
+
+</body>
+
+</html>
+
+
+<script>
+    function responder() {
+
+        div_pergunta.innerHTML =  `
+        <div id="div_resultado" style="width: 1000px;" >
+            <canvas id="myChart"></canvas>
+          </div>`
+
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+            );
+            
+            
+    }
+</script>

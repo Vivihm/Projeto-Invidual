@@ -1,0 +1,23 @@
+#div_pergunta{
+    background-color: #f3baba;
+    margin: 1vw 20vw;
+    border-radius: 2vw;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.opcao{
+    padding: 1vw;
+}
+.opcao:hover {
+    background-color: rgb(247, 233, 244);
+    border-radius: 0.5vw;
+    cursor: pointer;
+}
+
+.botao{
+    background-color: aliceblue;
+    width: 10vw;
+    border-radius: 1vw;
+}
