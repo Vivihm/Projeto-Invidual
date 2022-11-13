@@ -9,7 +9,7 @@ function validarSessao() {
 
     if (email != null && nome != null) {
         // window.alert(`Seja bem-vindo, ${nome}!`);
-        b_usuario.innerHTML = nome;
+        b_usuario.innerHTML = nome; 
 
         // finalizarAguardar();
     } else {
@@ -31,6 +31,7 @@ function aguardar() {
 }
 
 function finalizarAguardar(texto) {
+    console.log(texto)
     var divAguardar = document.getElementById("div_aguardar");
     divAguardar.style.display = "none";
 
@@ -41,14 +42,4 @@ function finalizarAguardar(texto) {
 }
 
 
-// modal
-function mostrarModal() {
-    var divModal = document.getElementById("div_modal");
-    divModal.style.display = "flex";
-}
-
-function fecharModal() {
-    var divModal = document.getElementById("div_modal");
-    divModal.style.display = "none";
-}
 

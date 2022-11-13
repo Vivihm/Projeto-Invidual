@@ -16,8 +16,38 @@
     cursor: pointer;
 }
 
+select {
+    width: 20vw;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    appearance: none;
+}
+
+option {
+    width: 20vw;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    appearance: none;
+}
+
 .botao{
     background-color: aliceblue;
     width: 10vw;
     border-radius: 1vw;
+}
+/* COMENTARIOS */
+
+.comentarios{
+    margin: 5vw;
+}
+.feed-container{
+    margin: 10vw;
+}
+
+
+.publicacao{
+    margin: 2vw;
+    background-color: #f3baba;
+    border: solid 2px black;
+    padding: 2vw;
 }

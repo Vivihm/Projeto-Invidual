@@ -1,11 +1,18 @@
 create database inspiragu;
 use inspiragu;
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+create table usuario (
+	idUsuario int primary key auto_increment,
+	nome varchar(50),
+	email varchar(50),
+	senha varchar(50)
+);
+
+create table comentario(
+idComentario int primary key auto_increment,
+comentario varchar(1000),
+fkUsuario int,
+foreign key (fkUsuario) references usuario (idUsuario)
 );
 
 select * from usuario;

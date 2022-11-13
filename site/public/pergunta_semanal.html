@@ -11,10 +11,6 @@
 
     <script src="./js/funcoes.js"></script>
 
-<!-- CHART JS -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
     <!-- FONTE DO GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +20,7 @@
     <title>Pergunta da semana</title>
 </head>
 
-<body>
+<body onload="validarSessao(), atualizarFeed()">
     <!-- HEADER -->
 
     <div class="header">
@@ -48,43 +44,47 @@
         <div class="questao">
             <h3>Qual é a sua maior dificuldade na hora de começar um projeto novo?</h3>
         </div>
-        <div class="opcoes">
-            <div class="opcao" value="1">Decidir o que fazer</div>
-            <div class="opcao" value="2">Saber como fazer</div>
-            <div class="opcao" value="3">Escolha de cores e lãs</div>
-        </div>
 
-
+        <select name="opcao" id="sel_resposta">
+            <option value="">Escolha uma opção</option>
+            <option value="1">Decidir o que fazer</option>
+            <option value="2">Saber como fazer</option>
+            <option value="3">Escolha de cores e lãs</option>
+        </select>
         <button class="botao" onclick="responder()">Responder</button>
+
+        <div id="div_resposta"></div>
     </div>
 
-    <!-- COMENTÁRIOS -->
+    <!-- COMENTARIOS -->
+    <div class="comentarios">
+        <div class="container">
+            <h1>Faça um comentário</h1>
+            <div class="form_postagem">
+                <form id="form_comentario" method="post" onsubmit="return publicar()">
+                    <textarea name="comentario" id="textarea_comentario" maxlength="500" rows="5"></textarea>
+                    <br>
+                    <button>Enviar</button>
+                </form>
+            </div>
 
+            <h1>Comentários</h1>
+            <div class="div-results">
+                <div id="feed_container" class="feed-container">
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script>
-        var opcoes = [
-          'Decidir o que fazer',
-          'Saber como fazer',
-          'Escolha de cores e lãs',
-        ];
-      
-        var data = {
-          labels: opcoes,
-          datasets: [{
-            label: 'Resultado',
-            backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
-            data: [3, 10, 5,],
-          }]
-        };
-      
-        var config = {
-          type: 'bar',
-          data: data,
-          options: {}
-        };
-      </script>
+      <!-- USUARIO -->
+      <div class="hello">
+        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+    </div>
 
+                <!-- AGUARDAR -->
+                <div id="div_aguardar" class="div-aguardar">
+                    <img src="./img/circle-loading.gif" id="img_aguarde">
+                </div> 
 
 </body>
 
@@ -92,18 +92,116 @@
 
 
 <script>
+    var qtdVotos = 0
+
     function responder() {
 
-        div_pergunta.innerHTML =  `
-        <div id="div_resultado" style="width: 1000px;" >
-            <canvas id="myChart"></canvas>
-          </div>`
+        var resposta = sel_resposta.value
 
-        var myChart = new Chart(
-            document.getElementById('myChart'),
-            config
-            );
-            
-            
+        if (resposta == 0) {
+            alert('Escolha uma opção!!')
+        } else {
+            qtdVotos++
+            div_resposta.innerHTML = '<b>Obrigada por contribuir! Participe da discussão</b><br>'
+            div_resposta.innerHTML += `Quantidade de votos: ${qtdVotos}`
+
+        }
     }
+// PUBLICARR
+
+
+function limparFormulario() {
+    document.getElementById("form_comentario").reset();
+}    
+function publicar() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        var corpo = {
+            comentario: form_comentario.comentario.value
+        }
+
+        fetch(`/comentarios/publicar/${idUsuario}`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(corpo)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Comentário feito com sucesso!");
+                window.location = "pergunta_semanal.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+
+    }
+
+    // ATUALIZAR
+    
+    function atualizarFeed() {
+        //aguardar();
+        fetch("/comentarios/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var divPublicacao = document.createElement("div");
+                        var spanID = document.createElement("span");
+                        var spanNome = document.createElement("span");
+                        var divComentario = document.createElement("div");
+
+
+                        spanID.innerHTML = "ID: <b>" + publicacao.idUsuario + "</b><br>";
+                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+                        divComentario.innerHTML =  publicacao.comentario ;
+
+                        divPublicacao.className = "publicacao";
+                        spanNome.className = "publicacao-nome";
+                        divComentario.className = "publicacao-comentario";
+
+                        divPublicacao.appendChild(spanID);
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(divComentario);
+                        feed.appendChild(divPublicacao);
+                    }
+
+                    finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            finalizarAguardar();
+        });
+    }
+
+
 </script>
