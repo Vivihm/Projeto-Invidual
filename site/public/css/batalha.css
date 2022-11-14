@@ -1,19 +1,10 @@
-#div_pergunta{
+#div_pesquisa{
     background-color: #f3baba;
     margin: 1vw 20vw;
     border-radius: 2vw;
     padding: 2vw;
     display: flex;
     flex-direction: column;
-}
-
-.opcao{
-    padding: 1vw;
-}
-.opcao:hover {
-    background-color: rgb(247, 233, 244);
-    border-radius: 0.5vw;
-    cursor: pointer;
 }
 
 select {
@@ -38,16 +29,15 @@ option {
 /* COMENTARIOS */
 
 .comentarios{
-    margin: 5vw;
+    margin: 1vw 5vw;
 }
 .feed-container{
-    margin: 10vw;
+    margin: 1vw 10vw;
 }
 
-
 .publicacao{
-    margin: 2vw;
     background-color: #f3baba;
-    border: solid 2px black;
-    padding: 2vw;
+    margin: 1vw;
+    border-radius: 2vw;
+    padding: 4vw;
 }

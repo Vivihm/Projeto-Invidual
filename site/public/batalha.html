@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./css/inspiracao.css">
-    <link rel="stylesheet" href="./css/pergunta_semanal.css">
+    <link rel="stylesheet" href="./css/batalha.css">
 
     <script src="./js/funcoes.js"></script>
+    <script src="./js/perfil.js"></script>
 
     <!-- FONTE DO GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,25 +33,46 @@
                 <li><a href="inspiracao.html">INSPIRE-SE</a></li>
                 <li>|</li>
                 <div style="background-color: white; padding: 0.1vw; border-radius: 0.5vw;">
-                    <li><a href="pergunta_semanal.html">PERGUNTA DA SEMANA</a></li>
+                    <li><a href="batalha.html">VOTAÇÕES</a></li>
                 </div>
                 <li><a href="perfil.html">Perfil</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- PERGUNTA SEMANAL -->
-    <div id="div_pergunta">
-        <div class="questao">
-            <h3>Qual é a sua maior dificuldade na hora de começar um projeto novo?</h3>
+    <!-- PESQUISA -->
+    <div id="div_pesquisa">
+        <h1>PESQUISA</h1>
+        Ajude o Inspiragu a entender mais sobre você. <br> Responda a nossa pesquisa! É rapidinho!
+
+        <div class="questao1">
+            <h3>O que você mais gosta de fazer?</h3>
+            <select name="opcao" id="sel_resposta">
+                <option value="">Escolha uma opção</option>
+                <option value="1">Acessórios</option>
+                <option value="2">Roupas</option>
+                <option value="3">Bolsas</option>
+            </select>
         </div>
 
-        <select name="opcao" id="sel_resposta">
-            <option value="">Escolha uma opção</option>
-            <option value="1">Decidir o que fazer</option>
-            <option value="2">Saber como fazer</option>
-            <option value="3">Escolha de cores e lãs</option>
-        </select>
+        <div class="questao2">
+            <h3>Qual técnica você prefere?</h3>
+            <select name="opcao" id="sel_resposta">
+                <option value="">Escolha uma opção</option>
+                <option value="1">Tricô</option>
+                <option value="2">Crochê</option>
+            </select>
+        </div>
+
+        <div class="questao3">
+            <h3>Po que você faz crochê/tricô?</h3>
+            <select name="opcao" id="sel_resposta">
+                <option value="">Escolha uma opção</option>
+                <option value="1">Hobby</option>
+                <option value="2">Trabalho</option>
+                <option value="3">Os dois</option>
+            </select>
+        </div>
         <button class="botao" onclick="responder()">Responder</button>
 
         <div id="div_resposta"></div>
@@ -60,6 +82,7 @@
     <div class="comentarios">
         <div class="container">
             <h1>Faça um comentário</h1>
+            <div id="div_perfil"></div>
             <div class="form_postagem">
                 <form id="form_comentario" method="post" onsubmit="return publicar()">
                     <textarea name="comentario" id="textarea_comentario" maxlength="500" rows="5"></textarea>
@@ -132,7 +155,7 @@ function publicar() {
 
             if (resposta.ok) {
                 window.alert("Comentário feito com sucesso!");
-                window.location = "pergunta_semanal.html";
+                window.location = "batalha.html";
                 limparFormulario();
                 finalizarAguardar();
             } else if (resposta.status == 404) {

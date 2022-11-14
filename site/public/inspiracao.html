@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/inspiracao.css">
+    <script src="./js/perfil.js"></script>
 
     <!-- FONTE DO GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +17,8 @@
     <title>Inspire-se</title>
 </head>
 
-<body>
-
+<body onload="ver_tudo()">
+    
     <!-- HEADER -->
 
     <div class="header">
@@ -30,7 +31,7 @@
                     <li><a href="inspiracao.html">INSPIRE-SE</a></li>
                 </div>
                 <li>|</li>
-                <li><a href="pergunta_semanal.html">PERGUNTA DA SEMANA</a></li>
+                <li><a href="batalha.html">VOTAÇÕES</a></li>
 
                 <li><a href="perfil.html">Perfil</a></li>
 
@@ -47,7 +48,7 @@
         <div><button onclick="ver_bolsas()">Bolsas</button></div>
         <div><button onclick="ver_roupas()">Roupas</button></div>
     </div>
-
+    
     <!-- FOTOS INSPIRAÇÃO -->
     <div id="div_inspiracao">
         <div id="div_imagens">
@@ -55,13 +56,12 @@
         </div>
     </div>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
 
 <script>
+
     var acessorios = ['<img src="./img/inspiracao/acessorios/2cb8f77766e541cdf59edc5e4b546117.jpg">',
         '<img src="./img/inspiracao/acessorios/31c38e901ca1928be45be8bb472ec6d0.jpg">',
         '<img src="./img/inspiracao/acessorios/7b1b56fc96cb2ec0ebd3ba0eb1371fa9.jpg">',
@@ -100,19 +100,6 @@
         '<img src="./img/inspiracao/roupas/e1f92a62de67bef8e8bab936f3bc46d2.jpg">',
         '<img src="./img/inspiracao/roupas/fac66303138be1b3250a42c9383a403d.jpg">',
         '<img src="./img/inspiracao/roupas/regata (2).jpg">']
-
-    for (indice = 0; indice < acessorios.length; indice++) {
-        div_imagens.innerHTML += acessorios[indice]
-    }
-
-    for (indice = 0; indice < bolsas.length; indice++) {
-        div_imagens.innerHTML += bolsas[indice]
-    }
-
-    for (indice = 0; indice < roupas.length; indice++) {
-        div_imagens.innerHTML += roupas[indice]
-    }
-
 
     function ver_tudo() {
         div_imagens.innerHTML = ''

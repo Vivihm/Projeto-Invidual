@@ -74,9 +74,51 @@
         </div>
     </div> -->
 
+    <div id="div_favoritos">
+        <h3>Calculo de quantidade de novelos para projetos quadrados</h3>
+        1-Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
+        2-Pese em uma balança quantos gramas essa amostra tem<br>
+        <br><br>
+        <div>
+            <b>Calculo:</b><br>
+            <b>Amostra</b> <br>
+            Área: 100m² <br> Gramas: <input placeholder="Peso em gramas da amostra" id="in_amostra"> <br><br>
+                              <b>Projeto</b><br>
+            Altura: <input placeholder="em cm" id="in_altura">  Largura: <input placeholder="em cm" id="in_largura"><br>
+
+            <b>Novelo</b><br>
+            Quantos gramas tem um novelo da lã que você pretende usar?<br>
+            <input id="in_gramas">
+
+            <button onclick="calcular()">Calcular</button>
+    
+            <div id="div_resposta"></div>
+        </div>
+    
+        
+    </div>
+
     <div class="footer">
              InspirAgu - copyright 2022. Todos os direitos reservados. Desenvolvido por Viviana Marca  
     </div>
 </body>
 
 </html>
+
+
+<script>
+    function calcular() {
+        var amostraArea = 100
+        var amostraGramas = Number(in_amostra.value)
+
+        var projetoAltura = Number(in_altura.value)
+        var projetoLargura = Number(in_largura.value)
+        var projetoArea = projetoAltura * projetoLargura
+
+        var calculo = (projetoArea * amostraGramas) / amostraArea  
+        var gramasNovelo = Number(in_gramas.value)
+
+        var qtdNovelos = calculo / gramasNovelo
+        div_resposta.innerHTML = `Você vai precisar de ${qtdNovelos.toFixed()} novelos`
+}
+</script>

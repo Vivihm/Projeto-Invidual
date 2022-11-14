@@ -1,0 +1,29 @@
+body{
+    background-image: url(../img/fundoperfil.jpg);
+}
+
+
+.caixa_perfil{
+    background-color: #f7d5d5;
+    margin: 2vw 15vw;
+    padding: 2vw;
+    border-radius: 5vw;
+}
+
+#div_perfil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#div_informacoes{
+    margin: 2vw;
+}
+
+#div_favoritos{
+    background-color: #f7d5d5;
+    margin: 2vw 15vw;
+    padding: 2vw;
+    border-radius: 5vw;
+}
