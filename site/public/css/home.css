@@ -144,6 +144,17 @@ html{
     text-align: center;
 }
 
+/* PESQUISA */
+#calculadora{
+background-color: #c9acac;
+padding: 3vw;
+}
+
+#caixa_calculadora{
+    background-color: #f3baba;
+    padding: 5vw;
+}
+
 /* FOOTER */
 .footer{
     background-color: #0c0b0b;

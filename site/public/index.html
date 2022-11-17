@@ -25,7 +25,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#oque">O que é</a></li>
-                <li><a href="#quemfaz">Quem faz</a></li>
+                <li><a href="#calculadora">Calculadora</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
@@ -74,26 +74,29 @@
         </div>
     </div> -->
 
-    <div id="div_favoritos">
-        <h3>Calculo de quantidade de novelos para projetos quadrados</h3>
-        1-Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
+    <div id="calculadora">
+        <div id="caixa_calculadora">
+
+            <h3>Calculo de quantidade de novelos para projetos quadrados</h3>
+            1-Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
         2-Pese em uma balança quantos gramas essa amostra tem<br>
         <br><br>
         <div>
             <b>Calculo:</b><br>
             <b>Amostra</b> <br>
             Área: 100m² <br> Gramas: <input placeholder="Peso em gramas da amostra" id="in_amostra"> <br><br>
-                              <b>Projeto</b><br>
+            <b>Projeto</b><br>
             Altura: <input placeholder="em cm" id="in_altura">  Largura: <input placeholder="em cm" id="in_largura"><br>
 
             <b>Novelo</b><br>
             Quantos gramas tem um novelo da lã que você pretende usar?<br>
             <input id="in_gramas">
-
+            
             <button onclick="calcular()">Calcular</button>
-    
+            
             <div id="div_resposta"></div>
         </div>
+    </div>
     
         
     </div>

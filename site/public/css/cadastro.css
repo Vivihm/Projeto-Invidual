@@ -19,14 +19,14 @@ body{
 .campo{ 
     height: 36vw;
     margin: 3vw 35vw;
-    border-radius: 2vw;
+
     padding: 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f3baba;
     flex-direction: column;
-    
+    box-shadow: 15px 15px 15px black;
 }
 
 .campo button{
@@ -39,7 +39,6 @@ body{
 }
 
 /* API */
-
 .alerta_erro{
     display: flex;
     justify-content: flex-end;
