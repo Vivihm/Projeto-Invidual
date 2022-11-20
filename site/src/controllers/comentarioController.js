@@ -5,7 +5,6 @@ function testar(req, res) {
     res.send("ENTRAMOS NO COMENTARIO CONTROLLER");
 }
 
-
 function listar(req, res) {
     comentarioModel.listar().then(function (resultado) {
         if (resultado.length > 0) {
