@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/funcoes.js"></script>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/calculadora.css">
+
+    <!-- FONTE DO GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;600&display=swap" rel="stylesheet">
+    <!-- ---------------------------------------- -->
+
+    <title>Calculadora de novelos</title>
+</head>
+
+<body>
+    <!-- -- HEADER -->
+    <div class="header">
+        <div id="logo"><a href="index.html"><b>InspiraAgu</b></a></div>
+
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="calculadora.html"style="background-color: white; padding: 0.4vw; border-radius: 0.3vw;">Calculadora</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="calculadora">
+        <div id="caixa_calculadora">
+
+            <h3>Calculo de quantidade de novelos para projetos quadrados</h3>
+            1-Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
+        2-Pese em uma balança quantos gramas essa amostra tem<br>
+        <br><br>
+        <div>
+            <b>Calculo:</b><br>
+            <b>Amostra</b> <br>
+            Área: 100m² <br> Gramas: <input placeholder="Peso em gramas da amostra" id="in_amostra"> <br><br>
+            <b>Projeto</b><br>
+            Altura: <input placeholder="em cm" id="in_altura">  Largura: <input placeholder="em cm" id="in_largura"><br>
+
+            <b>Novelo</b><br>
+            Quantos gramas tem um novelo da lã que você pretende usar?<br>
+            <input id="in_gramas">
+            
+            <button onclick="calcular()">Calcular</button>
+            
+            <div id="div_resposta"></div>
+        </div>
+    </div>
+    </div>
+
+    <div class="footer">
+        InspirAgu - copyright 2022. Todos os direitos reservados. Desenvolvido por Viviana Marca
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+    function calcular() {
+        var amostraArea = 100
+        var amostraGramas = Number(in_amostra.value)
+
+        var projetoAltura = Number(in_altura.value)
+        var projetoLargura = Number(in_largura.value)
+        var projetoArea = projetoAltura * projetoLargura
+
+        var calculo = (projetoArea * amostraGramas) / amostraArea  
+        var gramasNovelo = Number(in_gramas.value)
+
+        var qtdNovelos = calculo / gramasNovelo
+        div_resposta.innerHTML = `Você vai precisar de ${qtdNovelos.toFixed()} novelos`
+}
+</script>

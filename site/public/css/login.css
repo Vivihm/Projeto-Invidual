@@ -12,15 +12,11 @@ body{
     width: 15vw;
     height: 2vw;
     padding: 0.4vw;
-    margin-top: 1vw;
-    margin-bottom: 1vw;
+    margin-top: 0.5vw;
+    margin-bottom: 0.9vw;
 }
 
 .campo{ 
-    height: 25vw;
-    margin: 5vw 35vw;
-    border-radius: 2vw;
-    padding: 1vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,10 +34,39 @@ body{
     font-weight: bold;
 }
 
+.campo button:hover{
+  cursor: pointer;
+  background-color: #ffffff;
+  color: black;
+  transition: 0.2s;
+}
+
 .container{
     height: 41.2vw;
 }
 
+.conteudo_login{
+  border-radius: 2vw;
+  padding: 1vw;
+  height: 27vw;
+  margin: 5vw 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #f3baba;
+  box-shadow: 15px 15px 15px black;
+  border: solid 1px black;
+  border-radius: 10px;
+}
+
+.conteudo_login a{
+  color: #000000;
+
+}
+
+.conteudo_login a:hover{
+  opacity: 0.6;
+}
 
 /* API */
 

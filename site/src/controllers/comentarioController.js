@@ -1,10 +1,5 @@
 var comentarioModel = require("../models/comentarioModel");
 
-function testar(req, res) {
-    console.log("ENTRAMOS NO comentarioController");
-    res.send("ENTRAMOS NO COMENTARIO CONTROLLER");
-}
-
 function listar(req, res) {
     comentarioModel.listar().then(function (resultado) {
         if (resultado.length > 0) {
@@ -45,8 +40,7 @@ function publicar(req, res) {
 }
 
 module.exports = {
-
     listar,
-    publicar,
+    publicar
 
 }

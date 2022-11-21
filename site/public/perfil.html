@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./css/perfil.css">
 
     <script src="./js/funcoes.js"></script>
-    <script src="./js/perfil.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 
     <!-- FONTE DO GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,6 +55,200 @@
         </div>
     </div>
 
+       <!-- PESQUISA -->
+       <div id="div_pesquisa">
+        <div id="caixa_pesquisa">
+
+            <h1>PESQUISA</h1>
+            Ajude o Inspiragu a entender mais sobre você. <br> Responda a nossa pesquisa! É rapidinho!
+
+        <div class="questao1">
+            <h3>O que você mais gosta de fazer?</h3>
+            <select name="opcao" id="sel_resposta1">
+                <option value="">Escolha uma opção</option>
+                <option value="Acessórios">Acessórios</option>
+                <option value="Roupas">Roupas</option>
+                <option value="Bolsas">Bolsas</option>
+            </select>
+        </div>
+        
+        <div class="questao2">
+            <h3>Qual técnica você prefere?</h3>
+            <select name="opcao" id="sel_resposta2">
+                <option value="">Escolha uma opção</option>
+                <option value="Tricô">Tricô</option>
+                <option value="Crochê">Crochê</option>
+            </select>
+        </div>
+        
+        <div class="questao3">
+            <h3>Por que você faz crochê/tricô?</h3>
+            <select name="opcao" id="sel_resposta3">
+                <option value="">Escolha uma opção</option>
+                <option value="Hobby">Hobby</option>
+                <option value="Trabalho">Trabalho</option>
+                <option value="Os dois">Os dois</option>
+            </select>
+        </div>
+        <button class="botao" onclick="responder()">Responder</button>
+    </div>
+
+        <!-- <div id="graficos" style="display: none; display: flex; flex-direction: row;">
+            <div style="width: 250px;"><canvas id="myChart"></canvas></div>
+            <div style="width: 250px;"><canvas id="myChart2"></canvas></div>
+            <div style="width: 250px;"><canvas id="myChart3"></canvas></div>
+</div> -->
+    </div>
+
 </body>
 
+
+<!-- <script>
+
+    const data = {
+      labels: [
+        'Acessórios',
+        'Roupas',
+        'Bolsas'
+      ],
+      datasets: [{
+        label: 'Categoria favorita',
+        data: [300, 50, 100],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+    
+    const config = {
+      type: 'pie',
+      data: data,
+    };
+    
+    // chart 2
+    
+    const data2 = {
+      labels: [
+        'Red',
+        'Blue',
+        'Yellow'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [300, 50, 100],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+    
+    const config2= {
+      type: 'pie',
+      data: data2,
+    };
+    
+    // chart3
+    
+    const data3 = {
+      labels: [
+        'Red',
+        'Blue',
+        'Yellow'
+      ],
+      datasets: [{
+        label: 'My First Dataset',
+        data: [300, 50, 100],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+    
+    const config3 = {
+      type: 'pie',
+      data: data3,
+    };
+      </script>
+     
+     <script>
+        const myChart = new Chart(
+          document.getElementById('myChart'),
+          config
+        );
+    
+        // chart2
+        const myChart2 = new Chart(
+          document.getElementById('myChart2'),
+          config2
+        );
+    
+        // chart3
+        const myChart3 = new Chart(
+          document.getElementById('myChart3'),
+          config3
+        );
+    
+      </script> -->
+
 </html>
+
+<script>
+      // -----------------------------------COLOCAR DADOS NO BD ----------------------------------------------
+      function responder() {
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo        
+        var resposta1Var = sel_resposta1.value
+        var resposta2Var = sel_resposta2.value
+        var resposta3Var = sel_resposta3.value
+        
+        var idUsuario = sessionStorage.ID_USUARIO;
+        
+        if (resposta1Var == "" || resposta2Var == "" || resposta3Var == "") {
+            alert('Escolha uma opção para todas as perguntas!')
+
+            return false;
+        }
+
+        // Enviando o valor da nova input
+        console.log("teste")
+        
+        fetch(`/pesquisa/responder/${idUsuario}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                resposta1Server: resposta1Var,
+                resposta2Server: resposta2Var,
+                resposta3Server: resposta3Var,
+            })
+        }).then(function (resposta) {
+            
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                caixa_pesquisa.style.display = 'none'
+
+            } else {
+                throw ("Houve um erro ao tentar cadastrar sua resposta!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+ 
+</script>

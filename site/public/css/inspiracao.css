@@ -1,8 +1,15 @@
 body{
     margin: 0%;
     font-family: 'Barlow', sans-serif;
+
 }
 
+.conteudo_inspiracao{
+    padding: 0%;
+    background-image: url(../img/60286.jpg);
+    background-repeat: no-repeat cover;
+
+}
 /* HEADER */
 .header{
     background-color: #f3baba;
@@ -40,6 +47,12 @@ body{
     color: black;
 }
 
+.navbar ul li:hover{
+    opacity: 0.5;
+    color: white;    
+    transition: 0.2s;
+}
+
 /* FILTRO */
 
 h2{
@@ -72,4 +85,14 @@ img:hover{
     margin: 3.8vw;
     columns: 5 50px;
     column-gap: 0.6vw;
+
 }
+#div_imagens img {
+    transition: transform 0.9s ease;
+
+}
+#div_imagens img:hover {
+    transform: scale(1.5)
+}
+
+

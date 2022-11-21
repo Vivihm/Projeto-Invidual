@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/inspiracao.css">
+    <link rel="stylesheet" href="./css/tutoriais.css">
 
-    <script src="./js/perfil.js"></script>
+    <script src="./js/funcoes.js"></script>
 
     <!-- FONTE DO GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,20 +39,26 @@
         </div>
     </div>
 
-    <h2>Tutoriais do youtube</h2>
-    <!-- PESQUISA -->
-    Tá na dúvida?
-    Vem no aleatorio
-    <button onclick="aleatorio()">aleatorio</button>
-    
+    <div class="conteudo_tutoriais">
+        <div class="menu_tutoriais">
+            <div id="div_aleatorio">
+            <h3>Tutoriais do youtube</h3>
+            <div>
+                Tá na dúvida do que fazer?
+                Vem no aleatório
+                <button onclick="aleatorio()">aleatorio</button>
+            </div>
+        </div>
+    </div>
+
     <!-- TUTOTRIAIS -->
     <div id="div_inspiracao">
         <div id="div_imagens" style="width:100%;">
 
         </div>
     </div>
-
-    <span widht></span>
+</div>
+    
 </body>
 
 </html>
@@ -85,7 +92,7 @@
             div_imagens.innerHTML = `${videos[sorteado]}`
             div_imagens.style.width = "100%"
             div_imagens.style.display = "flex"
-        
+
         }
 
 

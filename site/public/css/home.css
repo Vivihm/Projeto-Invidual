@@ -15,7 +15,6 @@ html{
     padding: 0.2vw 5vw;
     align-items: center;
     border-bottom: solid 5px black;
-
     /* position: fixed; */
 }
 
@@ -33,12 +32,22 @@ html{
     list-style: none;
     margin: 0.1vw;
     width: 8vw;
+    text-align: center;
 }
 .navbar ul li a {
     text-decoration: none;
     color: black;
     cursor: pointer;
 }
+
+.navbar ul li a:hover{
+    opacity: 0.5;
+    transition-delay: 0.2s;
+    background-color: #eee7e7;
+    padding: 0.3vw;
+    border-radius: 0.4vw;
+}
+
 
 /* HOME */
 
@@ -80,6 +89,12 @@ html{
     color: black;
 }
 
+.chamada button:hover{
+    cursor: pointer;
+    background-color: #e2bbbb;
+    transition: 0.2s;
+}
+
 /* OQUE */
 #oque{
     background-image: url(../img/listras.jpg);
@@ -108,6 +123,7 @@ html{
     background-color: #f3baba;
     border: solid 2px black;
     width: 14vw;
+    box-shadow: 6px 6px 5px  black;
 }
 
 .caixa img{
@@ -142,17 +158,6 @@ html{
     font-weight: bold;
     font-size: larger;
     text-align: center;
-}
-
-/* PESQUISA */
-#calculadora{
-background-color: #c9acac;
-padding: 3vw;
-}
-
-#caixa_calculadora{
-    background-color: #f3baba;
-    padding: 5vw;
 }
 
 /* FOOTER */

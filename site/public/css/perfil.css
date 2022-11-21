@@ -1,5 +1,5 @@
 body{
-    background-image: url(../img/fundoperfil.jpg);
+    background-image: url(../img/60286.jpg);
 }
 
 
@@ -26,4 +26,33 @@ body{
     margin: 2vw 15vw;
     padding: 2vw;
     border-radius: 5vw;
+}
+
+#div_pesquisa{
+    background-color: #f3baba;
+    margin: 1vw 20vw;
+    border-radius: 2vw;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    width: 20vw;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    appearance: none;
+}
+
+option {
+    width: 20vw;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    appearance: none;
+}
+
+.botao{
+    background-color: aliceblue;
+    width: 10vw;
+    border-radius: 1vw;
 }

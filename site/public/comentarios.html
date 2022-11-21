@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="./js/funcoes.js"></script>
+
     <link rel="stylesheet" href="./css/inspiracao.css">
     <link rel="stylesheet" href="./css/comentario.css">
-
-    <script src="./js/funcoes.js"></script>
 
     <!-- FONTE DO GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,48 +39,16 @@
             </ul>
         </div>
     </div>
-
-    <!-- PESQUISA -->
-    <div id="div_pesquisa">
-        <h1>PESQUISA</h1>
-        Ajude o Inspiragu a entender mais sobre você. <br> Responda a nossa pesquisa! É rapidinho!
-
-        <div class="questao1">
-            <h3>O que você mais gosta de fazer?</h3>
-            <select name="opcao" id="sel_resposta1">
-                <option value="">Escolha uma opção</option>
-                <option value="Acessórios">Acessórios</option>
-                <option value="Roupas">Roupas</option>
-                <option value="Bolsas">Bolsas</option>
-            </select>
-        </div>
-
-        <div class="questao2">
-            <h3>Qual técnica você prefere?</h3>
-            <select name="opcao" id="sel_resposta2">
-                <option value="">Escolha uma opção</option>
-                <option value="Tricô">Tricô</option>
-                <option value="Crochê">Crochê</option>
-            </select>
-        </div>
-
-        <div class="questao3">
-            <h3>Po que você faz crochê/tricô?</h3>
-            <select name="opcao" id="sel_resposta3">
-                <option value="">Escolha uma opção</option>
-                <option value="Hobby">Hobby</option>
-                <option value="Trabalho">Trabalho</option>
-                <option value="Os dois">Os dois</option>
-            </select>
-        </div>
-        <button class="botao" onclick="responder()">Responder</button>
-
-        <div id="div_resposta"></div>
-    </div>
-
+    
+    
     <!-- COMENTARIOS -->
-    <div class="comentarios">
-        <div class="container">
+    <div class="conteudo_comentario">
+        <div class="hello">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>  
+
+        <div class="comentarios">
+            <div class="container">
             <h1>Faça um comentário</h1>
             <div id="div_perfil"></div>
             <div class="form_postagem">
@@ -90,92 +58,35 @@
                     <button>Enviar</button>
                 </form>
             </div>
+            
+            <div class="comentario">
 
-            <h1>Comentários</h1>
-            <div class="div-results">
-                <div id="feed_container" class="feed-container">
+                <h1>Comentários</h1>
+                <div class="div-results">
+                    <div id="feed_container" class="feed-container">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    <!--
 
-    <!-- USUARIO -->
-    <div class="hello">
-        <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-    </div>
-
-    <!-- AGUARDAR -->
     <div id="div_aguardar" class="div-aguardar">
         <img src="./img/circle-loading.gif" id="img_aguarde">
-    </div>
-
+    </div>-->
+</div>
+    
 </body>
-
 </html>
 
 
 <script>
-    // -----------------------------------COLOCAR DADOS NO BD ----------------------------------------------
-    function responder() {
-
-        console.log("testeComentarios")
-
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo
-
-        var resposta1Var = sel_resposta1.value
-        var resposta2Var = sel_resposta2.value
-        var resposta3Var = sel_resposta3.value
-
-        if (resposta1Var == "" || resposta2Var == "" || resposta3Var == "") {
-            alert('Escolha uma opção para todas as perguntas!')
-
-            return false;
-        }
-
-        // Enviando o valor da nova input
-        fetch("/pesquisa/responder", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                resposta1Server: resposta1Var,
-                resposta2Server: resposta2Var,
-                resposta3Server: resposta3Var
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-
-                div_resposta.innerHTML = '<b>Obrigada por contribuir! Participe da discussão</b><br>'
-                div_resposta.innerHTML += `Quantidade de votos: ${qtdVotos}`
-
-                setTimeout(() => {
-                    window.location = "comentarios.html";
-                }, "2000")
-
-                limparFormulario();
-            } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-
-        return false;
-    }
-
-    // PUBLICARR
-
-
-    function limparFormulario() {
+// PUBLICAR -------------------------------------------------------
+function limparFormulario() {
         document.getElementById("form_comentario").reset();
     }
+
     function publicar() {
         var idUsuario = sessionStorage.ID_USUARIO;
 
@@ -197,7 +108,7 @@
                 window.alert("Comentário feito com sucesso!");
                 window.location = "comentarios.html";
                 limparFormulario();
-                finalizarAguardar();
+                // finalizarAguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -205,7 +116,7 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
 
         return false;
@@ -256,18 +167,16 @@
                         feed.appendChild(divPublicacao);
                     }
 
-                    finalizarAguardar();
+                    // finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
     }
 
-
-    
-
 </script>
+

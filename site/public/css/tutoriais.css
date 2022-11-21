@@ -1,0 +1,24 @@
+.conteudo_tutoriais{
+   background-image: url(../img/60286.jpg);
+   background-repeat: no-repeat cover;
+}
+
+.menu_tutoriais{
+
+}
+
+
+
+#div_aleatorio{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+}
+
+button{
+    color: white;
+    background-color: #f3baba;
+    border-radius: 2vw;
+    border-color: black;
+}

@@ -7,6 +7,7 @@ function responder(req, res) {
     var resposta1 = req.body.resposta1Server;
     var resposta2 = req.body.resposta2Server;
     var resposta3 = req.body.resposta3Server;
+    var idUsuario = req.params.idUsuario;
 
     // Faça as validações dos valores
     if (resposta1 == undefined) {
@@ -15,10 +16,12 @@ function responder(req, res) {
         res.status(400).send("Seu resposta2 está undefined!");
     } else if (resposta3 == undefined) {
         res.status(400).send("Sua resposta3 está undefined!");
+    } else if(idUsuario == undefined) {
+        res.status(403).send("O id do usuário está indefinido!");
     } else {
         
         // Passe os valores como parâmetro e vá para o arquivo pesquisaModel.js
-        pesquisaModel.responder(resposta1, resposta2, resposta3)
+        pesquisaModel.responder(resposta1, resposta2, resposta3, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -37,5 +40,6 @@ function responder(req, res) {
 }
 
 module.exports = {
-    responder
+    responder,
+
 }

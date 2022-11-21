@@ -21,6 +21,6 @@ function publicar(comentario, idUsuario) {
 
 module.exports = {
     listar,
-    publicar,
+    publicar
 
 }

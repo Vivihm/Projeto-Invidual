@@ -26,9 +26,8 @@
         <div class="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="">O que é</a></li>
-                <li><a href="">Quem faz</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="calculadora.html">Calculadora</a></li>
+                <li><a href="cadastro.html" style="background-color: white; padding: 0.4vw; border-radius: 0.3vw">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </div>
@@ -43,31 +42,34 @@
             </div>
         </div>
         <!--  -->
-        <div class="campo">
-            <h1>Faça seu cadastro</h1>
+        <div class="conteudo_cadastro">
             
+            <div class="campo">
+            <h2>CADASTRE-SE</h2>
+
             <div class="cadastro">
 
                 <label for="">Nome:</label><br>
-                <input placeholder="" type="text" id="nome_input"><br>
+                <input placeholder="Digite seu nome" type="text" id="nome_input"><br>
 
                 <label for="">Email:</label><br>
-                <input placeholder="Seu email" type="email" id="email_input"><br>
+                <input placeholder="Digite seu email" type="email" id="email_input"><br>
 
                 <label for="">Senha:</label><br>
-                <input placeholder="" type="password" id="senha_input"><br>
+                <input placeholder="Crie uma senha" type="password" id="senha_input"><br>
 
                 <label for="">Confirme sua senha:</label><br>
-                <input placeholder="" type="password" id="confirmacao_senha_input"><br>
-
-                <button onclick="cadastrar()">Cadastrar</button>
+                <input placeholder="Confirme a senha" type="password" id="confirmacao_senha_input"><br>
+                <button onclick="cadastrar()">CADASTRAR</button>
+                <h4>Já tem uma conta? | <a href="login.html">Faça login</a></h4>
             </div>
         </div>
-
+    </div>
+        
         <!-- API -->
-        <div id="div_aguardar" class="loading-div">
+        <!-- <div id="div_aguardar" class="loading-div">
             <img src="./img/circle-loading.gif" id="loading-gif">
-        </div>
+        </div> -->
 
         <div id="div_erros_login"></div>
 
@@ -84,7 +86,7 @@
 <script>
     function cadastrar() { 
         console.log("teste")
-        aguardar();
+        // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -97,7 +99,7 @@
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
-            finalizarAguardar();
+            // finalizarAguardar();
             return false;
         }
         else {
@@ -131,13 +133,13 @@
                 }, "2000")
 
                 limparFormulario();
-                finalizarAguardar();
+                // finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
 
         return false;

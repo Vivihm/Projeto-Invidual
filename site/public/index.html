@@ -23,9 +23,8 @@
 
         <div class="navbar">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#oque">O que é</a></li>
-                <li><a href="#calculadora">Calculadora</a></li>
+                <li><a href="#home" style="background-color: white; padding: 0.4vw; border-radius: 0.3vw;">Home</a></li>
+                <li><a href="calculadora.html">Calculadora</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
@@ -43,7 +42,6 @@
 
     <!-- OQUE -->
     <div id="oque">
-       
         <div class="caixas">
             
             <div class="caixa">
@@ -63,41 +61,6 @@
         </div>
     </div>
     
-    <!-- QUEM FAZ -->
-    <!-- <div id="quemfaz">
-        <div class="quemfaz">
-            <div><img src="./img/40d185bf55446c11f6a0c3efbc573904.jpg" width="300vw"></div>
-            <div class="quem">
-                <div class="titulo">Viviana</div>
-                <div class="texto">kfkgjfgjfggjfgjgjfgjgjkgkjgjkgjkgjkgjkjhjhjkhjhjhjhkjhkjhkhhj<br>jh</div>
-            </div>
-        </div>
-    </div> -->
-
-    <div id="calculadora">
-        <div id="caixa_calculadora">
-
-            <h3>Calculo de quantidade de novelos para projetos quadrados</h3>
-            1-Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
-        2-Pese em uma balança quantos gramas essa amostra tem<br>
-        <br><br>
-        <div>
-            <b>Calculo:</b><br>
-            <b>Amostra</b> <br>
-            Área: 100m² <br> Gramas: <input placeholder="Peso em gramas da amostra" id="in_amostra"> <br><br>
-            <b>Projeto</b><br>
-            Altura: <input placeholder="em cm" id="in_altura">  Largura: <input placeholder="em cm" id="in_largura"><br>
-
-            <b>Novelo</b><br>
-            Quantos gramas tem um novelo da lã que você pretende usar?<br>
-            <input id="in_gramas">
-            
-            <button onclick="calcular()">Calcular</button>
-            
-            <div id="div_resposta"></div>
-        </div>
-    </div>
-    
         
     </div>
 
@@ -108,20 +71,3 @@
 
 </html>
 
-
-<script>
-    function calcular() {
-        var amostraArea = 100
-        var amostraGramas = Number(in_amostra.value)
-
-        var projetoAltura = Number(in_altura.value)
-        var projetoLargura = Number(in_largura.value)
-        var projetoArea = projetoAltura * projetoLargura
-
-        var calculo = (projetoArea * amostraGramas) / amostraArea  
-        var gramasNovelo = Number(in_gramas.value)
-
-        var qtdNovelos = calculo / gramasNovelo
-        div_resposta.innerHTML = `Você vai precisar de ${qtdNovelos.toFixed()} novelos`
-}
-</script>
