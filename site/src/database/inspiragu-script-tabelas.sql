@@ -16,8 +16,8 @@ foreign key (fkUsuario) references usuario (idUsuario),
 primary key (idComentario,fkUsuario) 
 );
 
-create table pesquisa(
-idPesquisa int primary key auto_increment,
+create table resposta_pesquisa(
+idResposta int primary key auto_increment,
 categoria varchar(1000),
 tecnica varchar(1000),
 objetivo varchar(1000),
@@ -25,10 +25,10 @@ fkUsuario int,
 foreign key (fkUsuario) references usuario(idUsuario)
 );
 
-drop table pesquisa;
-desc pesquisa;
+show tables;
+
 insert into usuario values
-(null,'mariana','viviana@gmail.com','senha');
+(null,'viviana','viviana@gmail.com','senha');
 
 insert into comentario values 
 (null,'Minha mãe amava fazer crochê então aprendi com ela',2);
@@ -38,22 +38,19 @@ insert into pesquisa values
 
 -- selecionar nome de usuario comentario;
 select usuario.nome,comentario.comentario from usuario join comentario on idUsuario = fkUsuario;
-select usuario.nome,pesquisa.* from pesquisa join usuario on idPesquisa = fkPesquisa;
+select usuario.nome,resposta_pesquisa.* from resposta_pesquisa join usuario on idResposta = fkUsuario;
 
 select*from usuario join comentario on idUsuario = fkUsuario;
 delete from usuario where idUsuario=3;
 select*from usuario;
 select*from comentario;
-select*from pesquisa;
+select*from resposta_pesquisa;
 
-select categoria from pesquisa where categoria = 'Acessórios' union select count(categoria)as QTD from pesquisa where categoria='Acessórios';
+select categoria ,count(categoria) as qtd_respostas from resposta_pesquisa group by categoria order by qtd_respostas; 
 
-select count(categoria)from pesquisa where categoria='Acessórios' group by categoria;
 -- Selecionar quantidade de cada categoria
-select count(categoria)from pesquisa where categoria='Acessórios' union
-select count(categoria)from pesquisa where categoria='Roupas' union
-select count(categoria)from pesquisa where categoria='Bolsas'; 
 
+select count(categoria)from resposta_pesquisa where categoria='Acessórios' union select count(categoria)from resposta_pesquisa where categoria='Roupas' union select count(categoria)from resposta_pesquisa where categoria='Bolsas';
 
 select*from pesquisa join usuario on idUsuario = fkUsuario; 
 

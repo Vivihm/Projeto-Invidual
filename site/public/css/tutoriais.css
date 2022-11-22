@@ -4,7 +4,8 @@
 }
 
 .menu_tutoriais{
-
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -22,3 +23,21 @@ button{
     border-radius: 2vw;
     border-color: black;
 }
+
+/* sorteio */
+.sorteio{
+    display: flex;
+    justify-content: center;
+    
+  }
+
+#div_sorteio {
+    display: none;
+    background-color: #f3baba;
+    color: black;
+    position: fixed;
+    border-radius: 1vw;
+    border: #111011 3px solid;
+    padding: 2vw 3vw;
+
+  }

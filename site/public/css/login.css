@@ -77,14 +77,15 @@ body{
   
   .card_erro {
     display: none;
-    background-color: #fff;
+    background-color: #f3baba;
     color: black;
     width: 230px;
     position: fixed;
-    border-radius: 4px;
-    border: #e6005a 3px solid;
+    border-radius: 1vw;
+    border: #111011 3px solid;
     padding: 10px;
-    margin-right: 10%;
+    margin-right: 15%;
+    margin-top: 20%;
   }
   
   .card_erro #mensagem_erro{

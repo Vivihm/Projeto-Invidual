@@ -42,23 +42,31 @@
     <div class="conteudo_tutoriais">
         <div class="menu_tutoriais">
             <div id="div_aleatorio">
-            <h3>Tutoriais do youtube</h3>
-            <div>
-                Tá na dúvida do que fazer?
-                Vem no aleatório
-                <button onclick="aleatorio()">aleatorio</button>
+                <h3>Tutoriais do youtube</h3>
+                <div>
+                    Tá na dúvida do que fazer?
+                    Vem no aleatório
+                    <button onclick="aleatorio()">aleatorio</button>
+                </div>
             </div>
         </div>
-    </div>
+        
+        <!-- SORTEIO -->
+        <div class="sorteio">
+            <div id="div_sorteio"></div>
+        </div>
 
-    <!-- TUTOTRIAIS -->
-    <div id="div_inspiracao">
-        <div id="div_imagens" style="width:100%;">
+        <!-- TUTOTRIAIS -->
+        <div id="div_inspiracao">
+            <div id="div_imagens" style="width:100%;">
+
+            </div>
 
         </div>
+
+
     </div>
-</div>
-    
+
 </body>
 
 </html>
@@ -83,20 +91,18 @@
     }
 
     function aleatorio() {
+
         var qtdVideos = videos.length
 
         var sorteio = parseInt(1 + Math.random() * qtdVideos)
-        div_imagens.innerHTML += sorteio
-
+        
         for (sorteado = 0; sorteado != sorteio; sorteado++) {
-            div_imagens.innerHTML = `${videos[sorteado]}`
-            div_imagens.style.width = "100%"
-            div_imagens.style.display = "flex"
-
+            // div_sorteio.style.display = "block"
+            // div_sorteio.innerHTML += '<h3>Aleatório</h3>'
+            // div_sorteio.innerHTML += '<p>Este foi o seu tutorial sorteado</p>'
+            div_sorteio.innerHTML = `${videos[sorteado]}`
+            // div_imagens.img.display = 'block'
         }
-
-
-
     }
 
 </script>
