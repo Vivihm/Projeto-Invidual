@@ -56,3 +56,10 @@ option {
     width: 10vw;
     border-radius: 1vw;
 }
+
+/* GRAFICOS */
+
+.graficos{
+    display: flex;
+    flex-direction: row;
+}

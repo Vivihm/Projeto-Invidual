@@ -2,324 +2,345 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/inspiracao.css">
-    <link rel="stylesheet" href="./css/perfil.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/inspiracao.css">
+  <link rel="stylesheet" href="./css/perfil.css">
 
-    <script src="./js/funcoes.js"></script>
+  <script src="./js/funcoes.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- FONTE DO GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;600&display=swap" rel="stylesheet">
-    <!-- ---------------------------------------- -->
+  <!-- FONTE DO GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;600&display=swap" rel="stylesheet">
+  <!-- ---------------------------------------- -->
 
-    <title>Meu perfil</title>
+  <title>Meu perfil</title>
 
 
 </head>
 
 <body onload="validarSessao()">
-    <!-- HEADER -->
-    <div class="header">
-        <div id="logo"><a href="index.html"><b>InspiraAgu</b></a></div>
-        <div class="navbar">
-            <ul>
-                <li><a href="tutoriais.html">TUTORIAIS</a></li>
-                <li>|</li>
-                <li><a href="inspiracao.html">INSPIRE-SE</a></li>
-                <li>|</li>
-                <li><a href="comentarios.html">COMENTÁRIOS</a></li>
+  <!-- HEADER -->
+  <div class="header">
+    <div id="logo"><a href="index.html"><b>InspiraAgu</b></a></div>
+    <div class="navbar">
+      <ul>
+        <li><a href="tutoriais.html">TUTORIAIS</a></li>
+        <li>|</li>
+        <li><a href="inspiracao.html">INSPIRE-SE</a></li>
+        <li>|</li>
+        <li><a href="comentarios.html">COMENTÁRIOS</a></li>
 
-                <div style="background-color: white; padding: 0.1vw; border-radius: 0.5vw;">
-                    <li><a href="perfil.html">Perfil</a></li>
-                </div>
-
-            </ul>
+        <div style="background-color: white; padding: 0.1vw; border-radius: 0.5vw;">
+          <li><a href="perfil.html">Perfil</a></li>
         </div>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- USUARIO -->
+  <div class="caixa_perfil">
+    <div id="div_perfil">
+      <div><img src="./img/perfil.png" width="100px"></div>
+      <div id="div_informacoes">
+        <h3><span id="b_usuario"></span></h3>
+        <h4>Apaixonada por crochê</h4>
+        <div id="redes">Redes sociais:<img src="./img/instagram.png" width="30px"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PESQUISA -->
+  <div id="div_pesquisa">
+    <div id="caixa_pesquisa">
+
+      <h1>PESQUISA</h1>
+      Ajude o Inspiragu a entender mais sobre você. <br> Responda a nossa pesquisa! É rapidinho!
+
+      <div class="questao1">
+        <h3>O que você mais gosta de fazer?</h3>
+        <select name="opcao" id="sel_resposta1">
+          <option value="">Escolha uma opção</option>
+          <option value="Acessórios">Acessórios</option>
+          <option value="Roupas">Roupas</option>
+          <option value="Bolsas">Bolsas</option>
+        </select>
+      </div>
+
+      <div class="questao2">
+        <h3>Qual técnica você prefere?</h3>
+        <select name="opcao" id="sel_resposta2">
+          <option value="">Escolha uma opção</option>
+          <option value="Tricô">Tricô</option>
+          <option value="Crochê">Crochê</option>
+        </select>
+      </div>
+
+      <div class="questao3">
+        <h3>Por que você faz crochê/tricô?</h3>
+        <select name="opcao" id="sel_resposta3">
+          <option value="">Escolha uma opção</option>
+          <option value="Hobby">Hobby</option>
+          <option value="Trabalho">Trabalho</option>
+          <option value="Os dois">Os dois</option>
+        </select>
+      </div>
+      <button class="botao" onclick="responder()">Responder</button>
     </div>
 
-    <!-- USUARIO -->
-    <div class="caixa_perfil">
-        <div id="div_perfil">
-            <div><img src="./img/perfil.png" width="100px"></div>
-            <div id="div_informacoes">
-                <h3><span id="b_usuario"></span></h3>
-                <h4>Apaixonada por crochê</h4>
-                <div id="redes">Redes sociais:<img src="./img/instagram.png" width="30px"></div>
-            </div>
-        </div>
+    <div id="graficos">
+      <!--CANVAS-->
+      <canvas class="grafico" id="grafico1" style="width: 4vw;"></canvas>
+      <canvas class="grafico" id="grafico2"></canvas>
+      <canvas class="grafico" id="grafico3"></canvas>
     </div>
-
-       <!-- PESQUISA -->
-       <div id="div_pesquisa">
-        <div id="caixa_pesquisa">
-
-            <h1>PESQUISA</h1>
-            Ajude o Inspiragu a entender mais sobre você. <br> Responda a nossa pesquisa! É rapidinho!
-
-        <div class="questao1">
-            <h3>O que você mais gosta de fazer?</h3>
-            <select name="opcao" id="sel_resposta1">
-                <option value="">Escolha uma opção</option>
-                <option value="Acessórios">Acessórios</option>
-                <option value="Roupas">Roupas</option>
-                <option value="Bolsas">Bolsas</option>
-            </select>
-        </div>
-        
-        <div class="questao2">
-            <h3>Qual técnica você prefere?</h3>
-            <select name="opcao" id="sel_resposta2">
-                <option value="">Escolha uma opção</option>
-                <option value="Tricô">Tricô</option>
-                <option value="Crochê">Crochê</option>
-            </select>
-        </div>
-        
-        <div class="questao3">
-            <h3>Por que você faz crochê/tricô?</h3>
-            <select name="opcao" id="sel_resposta3">
-                <option value="">Escolha uma opção</option>
-                <option value="Hobby">Hobby</option>
-                <option value="Trabalho">Trabalho</option>
-                <option value="Os dois">Os dois</option>
-            </select>
-        </div>
-        <button class="botao" onclick="responder()">Responder</button>
-    </div>
-
-        <div id="graficos" style="display: none; display: flex; flex-direction: row;">
-            <div style="width: 250px;"><canvas id="myChart"></canvas></div>
- 
-</div>
-    </div>
+  </div>
 
 </body>
 
-
-<!-- <script>
-
-    const data = {
-      labels: [
-        'Acessórios',
-        'Roupas',
-        'Bolsas'
-      ],
-      datasets: [{
-        label: 'Categoria favorita',
-        data: [300, 50, 100],
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)'
-        ],
-        hoverOffset: 4
-      }]
-    };
-    
-    const config = {
-      type: 'pie',
-      data: data,
-    };
-    
-    // chart 2
-    
-    const data2 = {
-      labels: [
-        'Red',
-        'Blue',
-        'Yellow'
-      ],
-      datasets: [{
-        label: 'My First Dataset',
-        data: [300, 50, 100],
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)'
-        ],
-        hoverOffset: 4
-      }]
-    };
-    
-    const config2= {
-      type: 'pie',
-      data: data2,
-    };
-    
-    // chart3
-    
-    const data3 = {
-      labels: [
-        'Red',
-        'Blue',
-        'Yellow'
-      ],
-      datasets: [{
-        label: 'My First Dataset',
-        data: [300, 50, 100],
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)'
-        ],
-        hoverOffset: 4
-      }]
-    };
-    
-    const config3 = {
-      type: 'pie',
-      data: data3,
-    };
-      </script>
-     
-     <script>
-        const myChart = new Chart(
-          document.getElementById('myChart'),
-          config
-        );
-    
-        // chart2
-        const myChart2 = new Chart(
-          document.getElementById('myChart2'),
-          config2
-        );
-    
-        // chart3
-        const myChart3 = new Chart(
-          document.getElementById('myChart3'),
-          config3
-        );
-    
-      </script> -->
-
 </html>
 
-<script >
-  window.onload=obterDadosGrafico()
+<script>
+  window.onload = obterVariosGraficos()
 
-      // -----------------------------------COLOCAR DADOS NO BD ----------------------------------------------
-      function responder() {
-        //Recupere o valor da nova input pelo nome do id
-        // Agora vá para o método fetch logo abaixo        
-        var resposta1Var = sel_resposta1.value
-        var resposta2Var = sel_resposta2.value
-        var resposta3Var = sel_resposta3.value
-        
-        var idUsuario = sessionStorage.ID_USUARIO;
-        
-        if (resposta1Var == "" || resposta2Var == "" || resposta3Var == "") {
-            alert('Escolha uma opção para todas as perguntas!')
-            return false;
-        }
+  function obterVariosGraficos() {
+    console.log("obter varios")
 
-        // Enviando o valor da nova input
-        console.log("teste")
-        
-        fetch(`/pesquisa/responder/${idUsuario}`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                resposta1Server: resposta1Var,
-                resposta2Server: resposta2Var,
-                resposta3Server: resposta3Var,
-            })
-        }).then(function (resposta) {
-            
+    // obterDadosGrafico()
+    
+    // obterDadosGrafico2()
 
-            console.log("resposta: ", resposta);
+    obterDadosGrafico3()
+  }
 
-            if (resposta.ok) {
-                caixa_pesquisa.style.display = 'none'
+  // -----------------------------------COLOCAR DADOS NO BD ----------------------------------------------
+  function responder() {
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo        
+    var resposta1Var = sel_resposta1.value
+    var resposta2Var = sel_resposta2.value
+    var resposta3Var = sel_resposta3.value
 
-            } else {
-                throw ("Houve um erro ao tentar cadastrar sua resposta!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
+    var idUsuario = sessionStorage.ID_USUARIO;
 
-        return false;
+    if (resposta1Var == "" || resposta2Var == "" || resposta3Var == "") {
+      alert('Escolha uma opção para todas as perguntas!')
+      return false;
     }
- 
-    // GRÁFICO
-    function obterDadosGrafico(idResposta) {
 
-fetch(`/medidas/ultimas:${idResposta}`, { cache: 'no-store' }).then(function (response) {
-    if (response.ok) {
-        response.json().then(function (resposta) {
-            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-            resposta.reverse();
+    // Enviando o valor da nova input
 
-            plotarGrafico(resposta);
-        });
-    } else {
-        console.error('Nenhum dado encontrado ou erro na API');
-    }
-})
-    .catch(function (error) {
-        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    fetch(`/pesquisa/responder/${idUsuario}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        resposta1Server: resposta1Var,
+        resposta2Server: resposta2Var,
+        resposta3Server: resposta3Var,
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+
+      if (resposta.ok) {
+        caixa_pesquisa.style.display = 'none'
+        graficos.style.display = 'block'
+
+      } else {
+        throw ("Houve um erro ao tentar cadastrar sua resposta!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
     });
-}
 
-// Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-// Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-// A função *plotarGrafico* também invoca a função *atualizarGrafico*
-function plotarGrafico(resposta) {
-// Criando estrutura para plotar gráfico - labels
-let labels = [];
+    return false;
+  }
 
-// Criando estrutura para plotar gráfico - dados
-let dados = {
-    labels: labels,
-    datasets: [{
-        label: 'Categoria',
+  // GRÁFICO
+  function obterDadosGrafico(idResposta) {
+    console.log('Obter dados graficos')
+
+    fetch(`/graficos/ultimosCategoria:${idResposta}`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+
+        response.json().then(function (resposta) {
+
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+
+          plotarGrafico(resposta);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  function obterDadosGrafico2() {
+    console.log('Obter dados 2')
+
+    fetch(`/graficos/ultimosTecnica`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+
+        response.json().then(function (resposta) {
+
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+
+          plotarGrafico2(resposta);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  function obterDadosGrafico3() {
+    console.log('Obter dados 3')
+
+    fetch(`/graficos/ultimosObjetivo`, { cache: 'no-store' }).then(function (response) {
+      if (response.ok) {
+
+        response.json().then(function (resposta) {
+
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          resposta.reverse();
+
+          plotarGrafico2(resposta);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+      });
+  }
+
+  // // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+  // // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+  // // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+  function plotarGrafico(resposta) {
+    //   // Criando estrutura para plotar gráfico - labels
+    let labels1 = [];
+
+    // Criando estrutura para plotar gráfico - dados
+
+    let dados1 = {
+      labels: labels1,
+      datasets: [{
+        label: 'Votos',
         data: [],
         fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-    },
-    ]
-};
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    };
 
+    console.log(resposta)
 
-// Inserindo valores recebidos em estrutura para plotar o gráfico
-for (i = 0; i < resposta.length; i++) {
-    var registro = resposta[i];
-    labels.push(registro.categoria);
-    dados.datasets[0].data.push(registro.categoria);
-}
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      labels1.push(registro.categoria);
+      dados1.datasets[0].data.push(registro.qtd_respostas);
 
-console.log('----------------------------------------------')
-console.log('O gráfico será plotado com os respectivos valores:')
-console.log('Labels:')
-console.log(labels)
-console.log('Dados:')
-console.log(dados.datasets)
-console.log('----------------------------------------------')
+    }
 
-// Criando estrutura para plotar gráfico - config
-const config = {
-    type: 'pie',
-    data: dados,
-};
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels1)
+    console.log('Dados:')
+    console.log(dados1.datasets)
+    console.log('----------------------------------------------')
 
-// Adicionando gráfico criado em div na tela
-let myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-);
+    // Criando estrutura para plotar gráfico - config
+    const config1 = {
+      type: 'pie',
+      data: dados1,
+    };
 
-// setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 2000);
-}
+    // Adicionando gráfico criado em div na tela
+    let grafico1 = new Chart(
+      document.getElementById('grafico1'),
+      config1
+    );
+
+  }
+
+  function plotarGrafico2(resposta) {
+    // GRÁFICO 2
+
+    let labels2 = [];
+
+    // Criando estrutura para plotar gráfico - dados
+
+    let dados2 = {
+      labels: labels2,
+      datasets: [{
+        label: 'Tecnica',
+        data: [],
+        fill: false,
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    };
+
+    console.log(resposta)
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      labels2.push(registro.tecnica);
+      dados2.datasets[0].data.push(registro.qtd_respostas);
+
+    }
+
+    console.log('----------------------------------------------')
+    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels2)
+    console.log('Dados:')
+    console.log(dados2.datasets)
+    console.log('----------------------------------------------')
+
+    // Criando estrutura para plotar gráfico - config
+    const config2 = {
+      type: 'pie',
+      data: dados2,
+    };
+
+    // Adicionando gráfico criado em div na tela
+    let grafico2 = new Chart(
+      document.getElementById('grafico2'),
+      config2
+    );
+
+  }
+
 
 </script>
