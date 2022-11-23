@@ -3,7 +3,7 @@ var router = express.Router();
 
 var graficoController = require("../controllers/graficoController");
 
-router.get("/ultimos", function (req, res) {
+router.get("/ultimosCategoria", function (req, res) {
     graficoController.buscarUltimosCategoria(req, res);
 });
 
@@ -14,9 +14,5 @@ router.get("/ultimosTecnica", function (req, res) {
 router.get("/ultimosObjetivo", function (req, res) {
     graficoController.buscarUltimosObjetivo(req, res);
 });
-
-// router.get("/tempo-real/:idResposta", function (req, res) {
-//     graficoController.buscarMedidasEmTempoReal(req, res);
-// })
 
 module.exports = router;

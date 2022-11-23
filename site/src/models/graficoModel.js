@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function buscarUltimosCategoria(idResposta) {
+function buscarUltimosCategoria() {
 
     instrucaoSql = ''
 

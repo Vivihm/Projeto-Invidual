@@ -111,9 +111,9 @@
   function obterVariosGraficos() {
     console.log("obter varios")
 
-    // obterDadosGrafico()
+    obterDadosGrafico()
     
-    // obterDadosGrafico2()
+    obterDadosGrafico2()
 
     obterDadosGrafico3()
   }
@@ -166,10 +166,10 @@
   }
 
   // GRÁFICO
-  function obterDadosGrafico(idResposta) {
+  function obterDadosGrafico() {
     console.log('Obter dados graficos')
 
-    fetch(`/graficos/ultimosCategoria:${idResposta}`, { cache: 'no-store' }).then(function (response) {
+    fetch(`/graficos/ultimosCategoria`, { cache: 'no-store' }).then(function (response) {
       if (response.ok) {
 
         response.json().then(function (resposta) {
@@ -221,7 +221,7 @@
           console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
           resposta.reverse();
 
-          plotarGrafico2(resposta);
+          plotarGrafico3(resposta);
         });
       } else {
         console.error('Nenhum dado encontrado ou erro na API');
@@ -235,6 +235,7 @@
   // // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
   // // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+  
   function plotarGrafico(resposta) {
     //   // Criando estrutura para plotar gráfico - labels
     let labels1 = [];
@@ -267,7 +268,7 @@
     }
 
     console.log('----------------------------------------------')
-    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('O gráfico categoria será plotado com os respectivos valores:')
     console.log('Labels:')
     console.log(labels1)
     console.log('Dados:')
@@ -288,8 +289,8 @@
 
   }
 
+  // GRÁFICO 2
   function plotarGrafico2(resposta) {
-    // GRÁFICO 2
 
     let labels2 = [];
 
@@ -298,7 +299,7 @@
     let dados2 = {
       labels: labels2,
       datasets: [{
-        label: 'Tecnica',
+        label: 'Votos',
         data: [],
         fill: false,
         backgroundColor: [
@@ -321,7 +322,7 @@
     }
 
     console.log('----------------------------------------------')
-    console.log('O gráfico será plotado com os respectivos valores:')
+    console.log('O gráfico tecnica será plotado com os respectivos valores:')
     console.log('Labels:')
     console.log(labels2)
     console.log('Dados:')
@@ -341,6 +342,59 @@
     );
 
   }
+
+  function plotarGrafico3(resposta) {
+
+let labels3 = [];
+
+// Criando estrutura para plotar gráfico - dados
+
+let dados3 = {
+  labels: labels3,
+  datasets: [{
+    label: 'Votos',
+    data: [],
+    fill: false,
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+};
+
+console.log(resposta)
+
+// Inserindo valores recebidos em estrutura para plotar o gráfico
+for (i = 0; i < resposta.length; i++) {
+  var registro = resposta[i];
+  labels3.push(registro.objetivo);
+  dados3.datasets[0].data.push(registro.qtd_respostas);
+
+}
+
+console.log('----------------------------------------------')
+console.log('O gráfico objeitvo será plotado com os respectivos valores:')
+console.log('Labels:')
+console.log(labels3)
+console.log('Dados:')
+console.log(dados3.datasets)
+console.log('----------------------------------------------')
+
+// Criando estrutura para plotar gráfico - config
+const config3 = {
+  type: 'pie',
+  data: dados3,
+};
+
+// Adicionando gráfico criado em div na tela
+let grafico3 = new Chart(
+  document.getElementById('grafico3'),
+  config3
+);
+
+}
 
 
 </script>
