@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/inspiracao.css">
 
+    <!-- SCROOL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- ----------------------------------------------------------------- -->
+
     <!-- FONTE DO GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +21,7 @@
 </head>
 
 <body onload="ver_tudo()">
-    
+
     <!-- HEADER -->
 
     <div class="header">
@@ -38,8 +42,7 @@
     </div>
 
     <div class="conteudo_inspiracao">
-        <div>
-            <h3>GALERIA DE INSPIRAÇÃO</h3>
+        <div class="filtros">
             <!-- FILTRO -->
             <div class="filtro">
                 <div><button onclick="ver_tudo()">Tudo</button></div>
@@ -48,14 +51,14 @@
                 <div><button onclick="ver_roupas()">Roupas</button></div>
             </div>
         </div>
-    
-    <!-- FOTOS INSPIRAÇÃO -->
-    <div id="div_inspiracao">
-        <div id="div_imagens">
-            
+
+        <!-- FOTOS INSPIRAÇÃO -->
+        <div id="div_inspiracao">
+            <div id="div_imagens">
+
+            </div>
         </div>
     </div>
-</div>
 
 </body>
 
@@ -63,58 +66,52 @@
 
 <script>
 
-    var acessorios = ['<img src="./img/inspiracao/acessorios/2cb8f77766e541cdf59edc5e4b546117.jpg">',
-        '<img src="./img/inspiracao/acessorios/31c38e901ca1928be45be8bb472ec6d0.jpg">',
-        '<img src="./img/inspiracao/acessorios/7b1b56fc96cb2ec0ebd3ba0eb1371fa9.jpg">',
-        '<img src="./img/inspiracao/acessorios/9f03467adadcdc99e12124fa573037bd.jpg">',
-        '<img src="./img/inspiracao/acessorios/b03d85fb21e61c136d2703c591890784.jpg">',
-        '<img src="./img/inspiracao/acessorios/bandana.jpg">',
-        '<img src="./img/inspiracao/acessorios/e13ab81f95730c796c792b5303436346.jpg">',
-        '<img src="./img/inspiracao/acessorios/fdd175e6f6420b2ad7e2f29c14a8c1dc.jpg">',
-        '<img src="./img/inspiracao/acessorios/fe90e40a437931041874a9e4494815cc.jpg">',
-        '<img src="./img/inspiracao/acessorios/florbranca.jpg">',
-        '<img src="./img/inspiracao/acessorios/38a97885575a0afa86bb2a043e007c8fuu.jpg">']
+    var imagens = {
+        acessorios: ['<img src="./img/inspiracao/acessorios/2cb8f77766e541cdf59edc5e4b546117.jpg">',
+            '<img src="./img/inspiracao/acessorios/31c38e901ca1928be45be8bb472ec6d0.jpg">',
+            '<img src="./img/inspiracao/acessorios/7b1b56fc96cb2ec0ebd3ba0eb1371fa9.jpg">',
+            '<img src="./img/inspiracao/acessorios/9f03467adadcdc99e12124fa573037bd.jpg">',
+            '<img src="./img/inspiracao/acessorios/b03d85fb21e61c136d2703c591890784.jpg">',
+            '<img src="./img/inspiracao/acessorios/bandana.jpg">',
+            '<img src="./img/inspiracao/acessorios/e13ab81f95730c796c792b5303436346.jpg">',
+            '<img src="./img/inspiracao/acessorios/fdd175e6f6420b2ad7e2f29c14a8c1dc.jpg">',
+            '<img src="./img/inspiracao/acessorios/fe90e40a437931041874a9e4494815cc.jpg">',
+            '<img src="./img/inspiracao/acessorios/florbranca.jpg">',
+            '<img src="./img/inspiracao/acessorios/38a97885575a0afa86bb2a043e007c8fuu.jpg">'],
 
+        bolsas: ['<img src="./img/inspiracao/bolsas/30c78119a4d3e8ca388005099b159a02.jpg">',
+            '<img src="./img/inspiracao/bolsas/5e685da42b7743c89c75c0226a601727.jpg">',
+            '<img src="./img/inspiracao/bolsas/79081a4e1fde3d9cab256413aa38d9cc.jpg">',
+            '<img src="./img/inspiracao/bolsas/99f13b3be5f9995b06686eb3006946b5.jpg">',
+            '<img src="./img/inspiracao/bolsas/b9aa0e9dce992b92cd1d991379499163.jpg">',
+            '<img src="./img/inspiracao/bolsas/bolsa grammy.jpg">',
+            '<img src="./img/inspiracao/bolsas/bolsa.jpg">',
+            '<img src="./img/inspiracao/bolsas/bolsacoracaso.jpg">',
+            '<img src="./img/inspiracao/bolsas/cae6363da21288854f0f16fc31836595.jpg">',
+            '<img src="./img/inspiracao/bolsas/daaf0fda48326adf746e675b94a9ef0f.jpg">',
+            '<img src="./img/inspiracao/bolsas/ecobag.jpg">',],
 
-
-    var bolsas = ['<img src="./img/inspiracao/bolsas/30c78119a4d3e8ca388005099b159a02.jpg">',
-        '<img src="./img/inspiracao/bolsas/5e685da42b7743c89c75c0226a601727.jpg">',
-        '<img src="./img/inspiracao/bolsas/79081a4e1fde3d9cab256413aa38d9cc.jpg">',
-        '<img src="./img/inspiracao/bolsas/99f13b3be5f9995b06686eb3006946b5.jpg">',
-        '<img src="./img/inspiracao/bolsas/b9aa0e9dce992b92cd1d991379499163.jpg">',
-        '<img src="./img/inspiracao/bolsas/bolsa grammy.jpg">',
-        '<img src="./img/inspiracao/bolsas/bolsa.jpg">',
-        '<img src="./img/inspiracao/bolsas/bolsacoracaso.jpg">',
-        '<img src="./img/inspiracao/bolsas/cae6363da21288854f0f16fc31836595.jpg">',
-        '<img src="./img/inspiracao/bolsas/daaf0fda48326adf746e675b94a9ef0f.jpg">',
-        '<img src="./img/inspiracao/bolsas/ecobag.jpg">',]
-
-    var roupas = ['<img src="./img/inspiracao/roupas/0a721797b3583e60e97fdb7edab2c0a4.jpg">',
-        '<img src="./img/inspiracao/roupas/3eaec7c71684df3e79dd2fe01785edaa.jpg">',
-        '<img src="./img/inspiracao/roupas/6dba83d0c287a30a02b40aa86a4f9898.jpg">',
-        '<img src="./img/inspiracao/roupas/7c348845213d940e6adba99199238d71.jpg">',
-        '<img src="./img/inspiracao/roupas/b400a961099b1a1345a4ee1b4930ae14.jpg">',
-        '<img src="./img/inspiracao/roupas/blusa com flores.jpg">',
-        '<img src="./img/inspiracao/roupas/blusao.jpg">',
-        '<img src="./img/inspiracao/roupas/c97c2fbd3599d852886c902523335892.jpg">',
-        '<img src="./img/inspiracao/roupas/ca33a0edf6ac1dca37abb3b70509ed1f.jpg">',
-        '<img src="./img/inspiracao/roupas/e1f92a62de67bef8e8bab936f3bc46d2.jpg">',
-        '<img src="./img/inspiracao/roupas/fac66303138be1b3250a42c9383a403d.jpg">',
-        '<img src="./img/inspiracao/roupas/regata (2).jpg">']
+        roupas: ['<img src="./img/inspiracao/roupas/0a721797b3583e60e97fdb7edab2c0a4.jpg">',
+            '<img src="./img/inspiracao/roupas/3eaec7c71684df3e79dd2fe01785edaa.jpg">',
+            '<img src="./img/inspiracao/roupas/6dba83d0c287a30a02b40aa86a4f9898.jpg">',
+            '<img src="./img/inspiracao/roupas/7c348845213d940e6adba99199238d71.jpg">',
+            '<img src="./img/inspiracao/roupas/b400a961099b1a1345a4ee1b4930ae14.jpg">',
+            '<img src="./img/inspiracao/roupas/blusa com flores.jpg">',
+            '<img src="./img/inspiracao/roupas/blusao.jpg">',
+            '<img src="./img/inspiracao/roupas/c97c2fbd3599d852886c902523335892.jpg">',
+            '<img src="./img/inspiracao/roupas/ca33a0edf6ac1dca37abb3b70509ed1f.jpg">',
+            '<img src="./img/inspiracao/roupas/e1f92a62de67bef8e8bab936f3bc46d2.jpg">',
+            '<img src="./img/inspiracao/roupas/fac66303138be1b3250a42c9383a403d.jpg">',
+            '<img src="./img/inspiracao/roupas/regata (2).jpg">']
+    }
 
     function ver_tudo() {
         div_imagens.innerHTML = ''
 
-        for (indice = 0; indice < acessorios.length; indice++) {
-            div_imagens.innerHTML += acessorios[indice]
-        }
-
-        for (indice = 0; indice < bolsas.length; indice++) {
-            div_imagens.innerHTML += bolsas[indice]
-        }
-
-        for (indice = 0; indice < roupas.length; indice++) {
-            div_imagens.innerHTML += roupas[indice]
+        for (indice = 0; indice < imagens.acessorios.length; indice++) {
+            div_imagens.innerHTML += imagens.acessorios[indice]
+            div_imagens.innerHTML += imagens.bolsas[indice]
+            div_imagens.innerHTML += imagens.roupas[indice]
         }
 
     }
@@ -122,24 +119,24 @@
     function ver_acessorios() {
         div_imagens.innerHTML = ''
 
-        for (indice = 0; indice < acessorios.length; indice++) {
-            div_imagens.innerHTML += acessorios[indice]
+        for (indice = 0; indice < imagens.acessorios.length; indice++) {
+            div_imagens.innerHTML += imagens.acessorios[indice]
         }
     }
 
     function ver_bolsas() {
         div_imagens.innerHTML = ''
 
-        for (indice = 0; indice < bolsas.length; indice++) {
-            div_imagens.innerHTML += bolsas[indice]
+        for (indice = 0; indice < imagens.bolsas.length; indice++) {
+            div_imagens.innerHTML += imagens.bolsas[indice]
         }
     }
 
     function ver_roupas() {
         div_imagens.innerHTML = ''
 
-        for (indice = 0; indice < roupas.length; indice++) {
-            div_imagens.innerHTML += roupas[indice]
+        for (indice = 0; indice < imagens.roupas.length; indice++) {
+            div_imagens.innerHTML += imagens.roupas[indice]
         }
     }
 </script>

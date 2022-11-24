@@ -23,3 +23,9 @@ body{
     border-radius: 2vw;
     padding: 4vw;
 }
+
+textarea{
+    color: bisque;
+    background-color: #f3baba;
+    border-radius: 1vw;
+}
