@@ -52,17 +52,16 @@
         </div>
         
         <!-- SORTEIO -->
-        <div class="sorteio">
-            <div id="div_sorteio"></div>
+        <div id="div_sorteio" >
+            <button onclick="fechar()">fechar</button>
+            <div id="div_video"></div>
         </div>
 
         <!-- TUTOTRIAIS -->
-        <div id="div_inspiracao">
-            <div id="div_imagens" style="width:100%;">
+        <div id="div_tutoriais">
+            <div id="div_videos" style="width:100%;">
 
             </div>
-
-            <a href="" target="_blank"></a>
         </div>
 
 
@@ -88,7 +87,7 @@
         '<a href="https://www.youtube.com/watch?v=BizO9nVUaXE" target="_blank"><img src="./img/videos/skullsweater.png"></a>']
 
     for (indice = 0; indice < videos.length; indice++) {
-        div_imagens.innerHTML += videos[indice]
+        div_videos.innerHTML += videos[indice]
     }
 
     function aleatorio() {
@@ -98,12 +97,17 @@
         var sorteio = parseInt(1 + Math.random() * qtdVideos)
         
         for (sorteado = 0; sorteado != sorteio; sorteado++) {
-            // div_sorteio.style.display = "block"
+            div_sorteio.style.display = "flex"
+            
             // div_sorteio.innerHTML += '<h3>Aleatório</h3>'
             // div_sorteio.innerHTML += '<p>Este foi o seu tutorial sorteado</p>'
             div_sorteio.innerHTML = `${videos[sorteado]}`
             // div_imagens.img.display = 'block'
         }
+
     }
+        function fechar() {
+            div_sorteio.display = "none"
+        }
 
 </script>

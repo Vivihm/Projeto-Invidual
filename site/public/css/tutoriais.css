@@ -23,6 +23,26 @@ button{
     border-radius: 2vw;
     border-color: black;
 }
+/* TUTORIAIS */
+
+#div_tutoriais{
+  display: flex;
+  align-items: center;
+}
+
+#div_videos {
+  margin: 1vw 3.8vw;
+  columns: 4 60px;
+  column-gap: 0.8vw;
+  
+}
+#div_videos img {
+  transition: transform 0.9s ease;
+  margin-bottom: 1vw;
+}
+#div_videos img:hover {
+  transform: scale(1.1)
+}
 
 /* sorteio */
 .sorteio{

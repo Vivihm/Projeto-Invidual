@@ -93,11 +93,11 @@
       <button class="botao" onclick="responder()">Responder</button>
     </div>
 
-    <div id="graficos">
+    <div class="graficos">
       <!--CANVAS-->
-      <canvas class="grafico" id="grafico1" style="width: 200px;"></canvas>
-      <canvas class="grafico" id="grafico2" style="width: 200px;"></canvas>
-      <canvas class="grafico" id="grafico3" style="width: 200px;"></canvas>
+      <canvas id="grafico1" style="width: 20px;"></canvas>
+      <canvas id="grafico2" style="width: 20px;"></canvas>
+      <canvas id="grafico3" style="width: 20px;"></canvas>
     </div>
   </div>
 
@@ -154,7 +154,11 @@
 
       if (resposta.ok) {
         caixa_pesquisa.style.display = 'none'
+        sessionStorage.RESPONDEU = 'SIM';
+        
         graficos.style.display = 'block'
+
+
 
       } else {
         throw ("Houve um erro ao tentar cadastrar sua resposta!");

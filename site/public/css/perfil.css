@@ -58,10 +58,8 @@ option {
 }
 
 /* GRAFICOS */
-#graficos{
+.graficos{
     display: flex;
     flex-direction: row;
-    margin: 10px;
-
+    width: 25vw;
 }
-
