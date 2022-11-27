@@ -39,6 +39,7 @@
           <li><a href="perfil.html">Perfil</a></li>
         </div>
 
+        <li><a onclick="limparSessao()">Sair</a></li>
       </ul>
     </div>
   </div>
@@ -102,6 +103,7 @@
   </div>
 
 </body>
+
 </html>
 
 <script>
@@ -111,12 +113,13 @@
     console.log("obter varios")
 
     obterDadosGrafico()
-    
+
     obterDadosGrafico2()
 
     obterDadosGrafico3()
 
     validarSessao()
+
   }
 
   // -----------------------------------COLOCAR DADOS NO BD ----------------------------------------------
@@ -154,11 +157,7 @@
 
       if (resposta.ok) {
         caixa_pesquisa.style.display = 'none'
-        sessionStorage.RESPONDEU = 'SIM';
-        
         graficos.style.display = 'block'
-
-
 
       } else {
         throw ("Houve um erro ao tentar cadastrar sua resposta!");
@@ -240,7 +239,7 @@
   // // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
   // // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
   // // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-  
+
   function plotarGrafico(resposta) {
     //   // Criando estrutura para plotar gráfico - labels
     let labels1 = [];
@@ -350,55 +349,55 @@
 
   function plotarGrafico3(resposta) {
 
-let labels3 = [];
+    let labels3 = [];
 
-// Criando estrutura para plotar gráfico - dados
+    // Criando estrutura para plotar gráfico - dados
 
-let dados3 = {
-  labels: labels3,
-  datasets: [{
-    label: 'Votos',
-    data: [],
-    fill: false,
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-};
+    let dados3 = {
+      labels: labels3,
+      datasets: [{
+        label: 'Votos',
+        data: [],
+        fill: false,
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4
+      }]
+    };
 
-console.log(resposta)
+    console.log(resposta)
 
-// Inserindo valores recebidos em estrutura para plotar o gráfico
-for (i = 0; i < resposta.length; i++) {
-  var registro = resposta[i];
-  labels3.push(registro.objetivo);
-  dados3.datasets[0].data.push(registro.qtd_respostas);
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      labels3.push(registro.objetivo);
+      dados3.datasets[0].data.push(registro.qtd_respostas);
 
-}
+    }
 
-console.log('----------------------------------------------')
-console.log('O gráfico objeitvo será plotado com os respectivos valores:')
-console.log('Labels:')
-console.log(labels3)
-console.log('Dados:')
-console.log(dados3.datasets)
-console.log('----------------------------------------------')
+    console.log('----------------------------------------------')
+    console.log('O gráfico objeitvo será plotado com os respectivos valores:')
+    console.log('Labels:')
+    console.log(labels3)
+    console.log('Dados:')
+    console.log(dados3.datasets)
+    console.log('----------------------------------------------')
 
-// Criando estrutura para plotar gráfico - config
-const config3 = {
-  type: 'pie',
-  data: dados3,
-};
+    // Criando estrutura para plotar gráfico - config
+    const config3 = {
+      type: 'pie',
+      data: dados3,
+    };
 
-// Adicionando gráfico criado em div na tela
-let grafico3 = new Chart(
-  document.getElementById('grafico3'),
-  config3
-);
+    // Adicionando gráfico criado em div na tela
+    let grafico3 = new Chart(
+      document.getElementById('grafico3'),
+      config3
+    );
 
-}
+  }
 
 </script>

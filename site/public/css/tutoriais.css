@@ -8,8 +8,6 @@
     justify-content: center;
 }
 
-
-
 #div_aleatorio{
 display: flex;
 flex-direction: row;
@@ -17,11 +15,48 @@ align-items: center;
 justify-content: space-around;
 }
 
-button{
-    color: white;
-    background-color: #f3baba;
-    border-radius: 2vw;
-    border-color: black;
+/* FILTRO */
+.botoes select{
+  width: 10vw;
+  background-color: #f3baba;
+  padding: 0.2vw 1vw;
+  border-radius: 2vw;
+  font-size: 14px;
+  border: solid 2px black; 
+  font-family: 'Barlow', sans-serif;
+  box-shadow: 2px 4px 4px black;
+
+}
+
+.select:hover{
+  cursor: pointer;
+}
+
+.botoes{
+  margin-left: 25vw;
+  margin-right: 25vw;
+  padding: 0.8vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.botoes button{
+  font-family: 'Barlow', sans-serif;
+  width: 10vw;
+  background-color: #f3baba;
+  color: black;
+  border-radius: 2vw;
+  padding: 0.3vw;
+  box-shadow: 2px 4px 4px black;
+
+}
+
+.botoes button:hover{
+  background-color: rgb(236, 206, 232);
+  cursor: pointer;
 }
 /* TUTORIAIS */
 

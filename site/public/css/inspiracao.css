@@ -72,7 +72,8 @@ body{
     background-color: #f3baba;
     color: black;
     border-radius: 2vw;
-    padding: 0.2vw;
+    padding: 0.3vw;
+    box-shadow: 2px 4px 4px black;
 }
 
 .filtro button:hover{
