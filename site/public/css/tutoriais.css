@@ -25,11 +25,14 @@ justify-content: space-around;
   border: solid 2px black; 
   font-family: 'Barlow', sans-serif;
   box-shadow: 2px 4px 4px black;
+  cursor: pointer;
+
 
 }
 
 .select:hover{
   cursor: pointer;
+
 }
 
 .botoes{
@@ -76,7 +79,7 @@ justify-content: space-around;
   margin-bottom: 1vw;
 }
 #div_videos img:hover {
-  transform: scale(1.1)
+  transform: scale(1.1);
 }
 
 /* sorteio */

@@ -22,8 +22,6 @@ console.log('Model')
    if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
         instrucaoSql = `select tecnica ,count(tecnica) as qtd_respostas from resposta group by tecnica order by qtd_respostas;`;
 
-
-
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

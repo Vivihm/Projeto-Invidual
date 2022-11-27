@@ -1,31 +1,68 @@
-body{
+body {
     margin: 0%;
     font-family: 'Barlow', sans-serif;
 }
 
-.conteudo_comentario{
+.conteudo_comentario {
     background-image: url(../img/60286.jpg);
     background-repeat: no-repeat cover;
-    
+
 }
 
 /* COMENTARIOS */
-.comentarios{
-    margin: 1vw 5vw;
-}
-.feed-container{
-    margin: 1vw 10vw;
+.comentarios {
+    margin: 1vw 8vw;
+    display: flex;
+    justify-content: center;
+    background-color: #f3baba;
+    border-radius: 2vw;
+    border: solid 2px black;
+    padding: 3.5vw;
+    box-shadow: 15px 15px 15px black;
+    align-items: center;
+
 }
 
-.publicacao{
+.container {
+    margin-left: 50px;
+}
+
+#div_introducao h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#div_introducao p {
+    text-indent: 50px;
+    font-size: larger;
+    text-align: left;
+    line-height: 2vw;
+}
+/* FAZER COMENTARIO */
+#div_comentario{
+    display: flex;
+    justify-content: center;
+}
+/* COMENTARIOS FEITOS */
+.feed-container {
+    margin: 1vw 8vw;
+}
+
+.publicacao {
     background-color: #f3baba;
     margin: 1vw;
     border-radius: 2vw;
     padding: 4vw;
 }
 
-textarea{
+textarea {
     color: bisque;
     background-color: #f3baba;
     border-radius: 1vw;
+}
+
+/*  */
+
+.publicacao-comentario {
+    overflow-wrap: break-word;
 }

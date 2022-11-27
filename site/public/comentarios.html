@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;600&display=swap" rel="stylesheet">
     <!-- ---------------------------------------- -->
 
-    <title>Pergunta da semana</title>
+    <title>Conte sua história</title>
 </head>
 
 <body onload="validarSessao(), atualizarFeed()">
@@ -39,18 +39,29 @@
             </ul>
         </div>
     </div>
-    
-    
+
+
     <!-- COMENTARIOS -->
     <div class="conteudo_comentario">
-        <div class="hello">
-            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-        </div>  
 
         <div class="comentarios">
+            <img src="./img/gxy5_h09j_210729.jpg" height="200px" alt="">
+
             <div class="container">
-            <h1>Faça um comentário</h1>
-            <div id="div_perfil"></div>
+
+                <div id="div_introducao">
+                    
+                    <h1>------------------ Conte sua História ------------------</h1>
+                    <p>O que faz você fazer crochê ou tricô? Cada um de nós tem sua história com essa arte, seja por hobby ou trabalho. Por que você começou a fazer? Quando? Tem algum laço afetivo? Isso desperta em você algo especial? Abra seu coração para a nossa comunidade!</p>
+                </div>
+                <h1>-------------------------------------------------------------</h1>
+                
+            </div>
+            
+        </div>
+        
+        <div id="div_comentario">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             <div class="form_postagem">
                 <form id="form_comentario" method="post" onsubmit="return publicar()">
                     <textarea name="comentario" id="textarea_comentario" maxlength="500" rows="5"></textarea>
@@ -58,32 +69,24 @@
                     <button>Enviar</button>
                 </form>
             </div>
-            
-            <div class="comentario">
+        </div>
 
-                <h1>Comentários</h1>
-                <div class="div-results">
-                    <div id="feed_container" class="feed-container">
-                    </div>
-                </div>
+        <div class="comentario">
+            <h1>Comentários</h1>
+            <div class="div-results">
+                <div id="feed_container" class="feed-container"></div>
             </div>
         </div>
     </div>
-    
-    <!--
 
-    <div id="div_aguardar" class="div-aguardar">
-        <img src="./img/circle-loading.gif" id="img_aguarde">
-    </div>-->
-</div>
-    
 </body>
+
 </html>
 
 
 <script>
-// PUBLICAR -------------------------------------------------------
-function limparFormulario() {
+    // PUBLICAR -------------------------------------------------------
+    function limparFormulario() {
         document.getElementById("form_comentario").reset();
     }
 
@@ -92,6 +95,13 @@ function limparFormulario() {
 
         var corpo = {
             comentario: form_comentario.comentario.value
+        }
+
+        
+        if (idUsuario == "" || corpo == "") {
+            alert("Coloque seu email e senha!")
+            // finalizarAguardar();
+            return false;
         }
 
         fetch(`/comentarios/publicar/${idUsuario}`, {
@@ -179,4 +189,3 @@ function limparFormulario() {
     }
 
 </script>
-
