@@ -50,29 +50,44 @@
             <div class="container">
 
                 <div id="div_introducao">
-                    
-                    <h1>------------------ Conte sua História ------------------</h1>
-                    <p>O que faz você fazer crochê ou tricô? Cada um de nós tem sua história com essa arte, seja por hobby ou trabalho. Por que você começou a fazer? Quando? Tem algum laço afetivo? Isso desperta em você algo especial? Abra seu coração para a nossa comunidade!</p>
+
+                    <h1>----------------- Conte sua História --------------</h1>
+                    <p>O que faz você fazer crochê ou tricô? Cada um de nós tem sua história com essa arte, seja por
+                        hobby ou trabalho. Por que você começou a fazer? Quando? Tem algum laço afetivo? Isso desperta
+                        em você algo especial? Abra seu coração para a nossa comunidade!</p>
+                    <h1>---------------------------------------------------------<h1>
                 </div>
-                <h1>-------------------------------------------------------------</h1>
-                
+
             </div>
-            
+
         </div>
-        
-        <div id="div_comentario">
-            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
-            <div class="form_postagem">
-                <form id="form_comentario" method="post" onsubmit="return publicar()">
-                    <textarea name="comentario" id="textarea_comentario" maxlength="500" rows="5"></textarea>
-                    <br>
-                    <button>Enviar</button>
-                </form>
+
+        <div class="comentar">
+
+            <div id="div_postagem">
+                <!-- <img src="./img/gxy5_h09j_210729.jpg" height="200px" alt=""> -->
+
+                <div class="caixa"> 
+                    <h3> Agora é a sua vez <span id="b_usuario">usuário</span>!</h3>
+                    
+                    <div id="div_comentario">
+                        <img src="./img/usuario.png" height="100px">
+                        
+                        <div class="form_postagem">
+                            <form id="form_comentario" method="post" onsubmit="return publicar()">
+                                <textarea placeholder="Conte nos sobre a sua história" name="comentario" id="textarea_comentario" maxlength="500" rows="5"></textarea>
+                                <br>
+                                <button>Enviar</button>
+                            </form>
+                        </div>
+                    </div> 
+
+                </div>
             </div>
         </div>
 
         <div class="comentario">
-            <h1>Comentários</h1>
+            <h1>----------------------Depoimentos------------------------------------</h1>
             <div class="div-results">
                 <div id="feed_container" class="feed-container"></div>
             </div>
@@ -97,7 +112,7 @@
             comentario: form_comentario.comentario.value
         }
 
-        
+
         if (idUsuario == "" || corpo == "") {
             alert("Coloque seu email e senha!")
             // finalizarAguardar();
