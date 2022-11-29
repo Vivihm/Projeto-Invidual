@@ -16,17 +16,19 @@
     <!-- ---------------------------------------- -->
 
     <title>Calculadora de novelos</title>
+    <link rel="icon" href="img/iconelogo.png" />
 </head>
 
 <body>
     <!-- -- HEADER -->
     <div class="header">
-        <div id="logo"><a href="index.html"><b>InspiraAgu</b></a></div>
+        <div id="logo"><a href="index.html"><img src="./img/logo2.png" width="150px"></a></div>
 
         <div class="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="calculadora.html"style="background-color: white; padding: 0.4vw; border-radius: 0.3vw;">Calculadora</a></li>
+                <li><a href="calculadora.html"
+                        style="background-color: white; padding: 0.4vw; border-radius: 0.3vw;">Calculadora</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
@@ -36,26 +38,38 @@
     <div id="calculadora">
         <div id="caixa_calculadora">
 
-            <h3>Calculo de quantidade de novelos para projetos quadrados</h3>
-            1-Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
-        2-Pese em uma balança quantos gramas essa amostra tem<br>
-        <br><br>
-        <div>
-            <b>Calculo:</b><br>
-            <b>Amostra</b> <br>
-            Área: 100m² <br> Gramas: <input placeholder="Peso em gramas da amostra" id="in_amostra"> <br><br>
-            <b>Projeto</b><br>
-            Altura: <input placeholder="em cm" id="in_altura">  Largura: <input placeholder="em cm" id="in_largura"><br>
+            <div id="div_instrucao">
+                <h2>Cálculo de quantidade de novelos para projetos quadrados</h2>
+                1-Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
+                2-Pese em uma balança quantos gramas essa amostra tem<br>
+                3- Insira os valores nos campos abaixo
+            </div>
 
-            <b>Novelo</b><br>
-            Quantos gramas tem um novelo da lã que você pretende usar?<br>
-            <input id="in_gramas">
-            
-            <button onclick="calcular()">Calcular</button>
-            
-            <div id="div_resposta"></div>
+            <div id="div_calculo">
+                <div id="div_imagem">
+                    <img src="./img/7sfe_72lp_200510.jpg" width="100px">
+                </div>
+
+                <div id="funcao_calculadora">
+
+                    <h2>Cálculo:</h2><br>
+                    <b>Amostra</b> <br>
+                    Área: 100m² <br> Gramas: <input placeholder="Peso em gramas da amostra" id="in_amostra"> <br>
+                    <b>Projeto</b><br>
+                    Altura: <input placeholder="em cm" id="in_altura"> Largura: <input placeholder="em cm"
+                        id="in_largura"><br>
+
+                    <b>Novelo</b><br>
+                    Quantos gramas tem um novelo da lã que você pretende usar?<br>
+                    <input id="in_gramas">
+
+                    <button onclick="calcular()">Calcular</button>
+
+                    <div id="div_resposta"></div>
+
+                </div>
+            </div>
         </div>
-    </div>
     </div>
 
     <div class="footer">
@@ -76,10 +90,10 @@
         var projetoLargura = Number(in_largura.value)
         var projetoArea = projetoAltura * projetoLargura
 
-        var calculo = (projetoArea * amostraGramas) / amostraArea  
+        var calculo = (projetoArea * amostraGramas) / amostraArea
         var gramasNovelo = Number(in_gramas.value)
 
         var qtdNovelos = calculo / gramasNovelo
         div_resposta.innerHTML = `Você vai precisar de ${qtdNovelos.toFixed()} novelos`
-}
+    }
 </script>
