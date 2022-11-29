@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/login.css">
 
-      <!-- FONTE DO GOOGLE FONTS -->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;600&display=swap" rel="stylesheet">
-     <!-- ---------------------------------------- -->
+    <!-- FONTE DO GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;500;600&display=swap" rel="stylesheet">
+    <!-- ---------------------------------------- -->
 
     <title>Login</title>
-    <link rel="icon" href="img/iconelogo.png"/>
+    <link rel="icon" href="img/iconelogo.png" />
 </head>
 
 <body>
@@ -29,14 +29,15 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="calculadora.html">Calculadora</a></li>
                 <li><a href="cadastro.html">Cadastro</a></li>
-                <li><a href="login.html" style="background-color: white; padding: 0.4vw; border-radius: 0.3vw;">Login</a></li>
+                <li><a href="login.html"
+                        style="background-color: white; padding: 0.4vw; border-radius: 0.3vw;">Login</a></li>
             </ul>
         </div>
     </div>
 
     <!-- LOGIN -->
     <div class="container">
-        
+
         <div class="alerta_erro">
             <div class="card_erro" id="cardErro">
                 <span id="mensagem_erro"></span>
@@ -47,17 +48,17 @@
 
             <div class="campo">
                 <h2>LOGIN</h2>
-            <div class="login">
-                <label for="">Email:</label><br>
-                <input placeholder="Seu email" type="email" id="email_input"><br>
-                
-                <label for="">Senha:</label><br>
-                <input placeholder="Sua senha" type="password" id="senha_input"><br>
+                <div class="login">
+                    <label for="">Email:</label><br>
+                    <input placeholder="Seu email" type="email" id="email_input"><br>
+
+                    <label for="">Senha:</label><br>
+                    <input placeholder="Sua senha" type="password" id="senha_input"><br>
+                </div>
+                <button onclick="entrar()">ENTRAR</button>
+                <h4>Ainda não é cadastrado? | <a href="cadastro.html">Cadastre-se</a></h4>
             </div>
-            <button onclick="entrar()">ENTRAR</button>
-            <h4>Ainda não é cadastrado? | <a href="cadastro.html">Cadastre-se</a></h4>
         </div>
-    </div>
     </div>
 
     <!-- API -->
@@ -69,8 +70,8 @@
 
     <!-- FOOTER -->
     <div class="footer">
-        InspirAgu - copyright 2022. Todos os direitos reservados. Desenvolvido por Viviana Marca  
-</div>
+        InspirAgu - copyright 2022. Todos os direitos reservados. Desenvolvido por Viviana Marca
+    </div>
 </body>
 
 </html>
@@ -118,21 +119,42 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idUsuario;
-                                        
+
+                    // / VERIFICAR RESPOSTA/ 
+                    fetch("/usuarios/verificar-resposta", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            fkUsuarioServer: sessionStorage.getItem('ID_USUARIO'),
+                        })
+                    }).then(function (resposta) {
+                        resposta.json()
+                            .then(function (json) {
+                                sessionStorage.setItem("RESPONDEU", json[0].quantidade ? "SIM" : "NAO")
+                                
+                            }).catch(function (erro) {
+                                console.error(erro);
+                            })
+                    }).catch(function (erro) {
+                        console.error(erro);
+                    })
+                    // VERIFICAR RESPOSTA TERMINA AQUI
 
                     setTimeout(function () {
-                        
+
                         window.location = "tutoriais.html";
                     }, 1000); // apenas para exibir o loading
-                    
+
                 });
-                
+
             } else {
-                
+
                 console.log("Houve um erro ao tentar realizar o login!");
                 cardErro.style.display = "block";
                 mensagem_erro.innerHTML = "Usuário e/ou senha incorretas!";
-                
+
                 resposta.text().then(texto => {
                     console.error(texto);
                     // finalizarAguardar(texto);

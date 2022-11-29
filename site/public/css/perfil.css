@@ -35,6 +35,20 @@ body{
     padding: 2vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+#caixa_pesquisa{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#caixa_pesquisa button{
+    display: flex;
+    justify-content: center;
+    /* display: flex
+    flex-direction: column; */
 }
 
 select {
@@ -61,5 +75,5 @@ option {
 .graficos{
     display: flex;
     flex-direction: row;
-    width: 25vw;
+    width: 19vw;
 }

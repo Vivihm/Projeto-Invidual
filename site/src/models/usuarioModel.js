@@ -31,8 +31,13 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
+function verificarResposta(fkUsuario) {
+    return database.executar(`select ifnull(count(*), 0) as quantidade from usuario u join resposta r on u.idUsuario = r.fkusuario where u.idUsuario = ${fkUsuario};`)
+}
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
+    verificarResposta
 };

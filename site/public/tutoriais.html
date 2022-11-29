@@ -17,10 +17,10 @@
     <!-- ---------------------------------------- -->
 
     <title>Tutoriais</title>
-    <link rel="icon" href="img/iconelogo.png"/>
+    <link rel="icon" href="img/iconelogo.png" />
 </head>
 
-<body onload="ver_tudo()">
+<body onload="ver_projetos()">
     <!-- HEADER -->
     <div class="header">
         <div id="logo"><a href="index.html"><img src="./img/logo2.png" width="150px"></a></div>
@@ -66,8 +66,9 @@
     </div>
 
 </body>
+
 </html>
-  
+
 <script>
 
     var videos = [
@@ -81,22 +82,18 @@
         { video: '<a href="https://www.youtube.com/watch?v=CgD2ONC-MA0" target="_blank"><img src="./img/videos/bucket.png"></a>', tipo: 'projeto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=sZDTSUxW0BM&t=3s" target="_blank"><img src="./img/videos/cardiganstylestrico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=FLKGnu-jv8w" target="_blank"><img src="./img/videos/totebag.png"></a>', tipo: 'projeto', tecnica: 'croche' },
-        { video: '<a href="https://www.youtube.com/watch?v=XEadUXzdvUI" target="_blank"><img src="./img/videos/croppppptrico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=mhUw7l60Yag" target="_blank"><img src="./img/videos/pullover.png"></a>', tipo: 'projeto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=1lDCVGHHM3Q" target="_blank"><img src="./img/videos/stripedsweater.png"></a>', tipo: 'projeto', tecnica: 'croche' },
-        { video: '<a href="https://www.youtube.com/watch?v=mJzv64EvCCk" target="_blank"><img src="./img/videos/heartbag.png"></a>', tipo: 'projeto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=V6u-SMh4y0w" target="_blank"><img src="./img/videos/sweatervintage.png"></a>', tipo: 'projeto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=Fpx9d4IPoy8" target="_blank"><img src="./img/videos/cropedtrico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=BizO9nVUaXE" target="_blank"><img src="./img/videos/skullsweater.png"></a>', tipo: 'projeto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=AG52DNjerf0" target="_blank"><img src="./img/videos/oversidetrico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=GaAHOpJZ5zs&t=462s" target="_blank"><img src="./img/videos/sweatertrico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
-        { video: '<a href="https://www.youtube.com/watch?v=f2ZE-wNvxLo&t=122s" target="_blank"><img src="./img/videos/casaco2trico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=vPxpikMgJuM" target="_blank"><img src="./img/videos/scrappysweater.png"></a>', tipo: 'projeto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=c8MU1QY_Xq0" target="_blank"><img src="./img/videos/croppedtrico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=P4Qt0-JR6xA&t=183s" target="_blank"><img src="./img/videos/suetertrico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=sWsfXO1dBd4&t=573s" target="_blank"><img src="./img/videos/tricotblusao.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=FoGWJik-NOo" target="_blank"><img src="./img/videos/tricotocard.png"></a>', tipo: 'projeto', tecnica: 'trico' },
-        { video: '<a href="https://www.youtube.com/watch?v=CDa9F6Wo9cQ" target="_blank"><img src="./img/videos/tricotrosa.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=B6B-GuVRQCU" target="_blank"><img src="./img/videos/tricottcardigannnnnn.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=W--vcOG6dn0" target="_blank"><img src="./img/videos/cardiganazulll.png"></a>', tipo: 'projeto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=KhypFqnGAX8&t=446s" target="_blank"><img src="./img/videos/sanfonacroche.png"></a>', tipo: 'ponto', tecnica: 'croche' },
@@ -105,15 +102,19 @@
         { video: '<a href="https://www.youtube.com/watch?v=02oKbJLDY6Y" target="_blank"><img src="./img/videos/pontoespacosocrochee.png"></a>', tipo: 'ponto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=aJ__3Zyx_LU" target="_blank"><img src="./img/videos/pontocrochezig.png"></a>', tipo: 'ponto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=B1wOdIGkiwA" target="_blank"><img src="./img/videos/pontocrochestich.png"></a>', tipo: 'ponto', tecnica: 'croche' },
+        { video: '<a href="https://www.youtube.com/watch?v=f2ZE-wNvxLo&t=122s" target="_blank"><img src="./img/videos/casaco2trico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=B1wOdIGkiwA" target="_blank"><img src="./img/videos/pontocrocheeeee.png"></a>', tipo: 'ponto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=XWfr0xdkXq0" target="_blank"><img src="./img/videos/pontocrochee.png"></a>', tipo: 'ponto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=oB7oj8-734Q" target="_blank"><img src="./img/videos/pontobaixocroche.png"></a>', tipo: 'ponto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=z5sVZqAkgtw" target="_blank"><img src="./img/videos/pontoalpinocroche.png"></a>', tipo: 'ponto', tecnica: 'croche' },
+        { video: '<a href="https://www.youtube.com/watch?v=XEadUXzdvUI" target="_blank"><img src="./img/videos/croppppptrico.png"></a>', tipo: 'projeto', tecnica: 'trico' },
+        { video: '<a href="https://www.youtube.com/watch?v=mJzv64EvCCk" target="_blank"><img src="./img/videos/heartbag.png"></a>', tipo: 'projeto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=7BNHcQ93sy8" target="_blank"><img src="./img/videos/fantasiacroche.png"></a>', tipo: 'ponto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=jmKE_dE8h4c" target="_blank"><img src="./img/videos/estrelacrochee.png"></a>', tipo: 'ponto', tecnica: 'croche' },
         { video: '<a href="https://www.youtube.com/watch?v=L_EWNeAuxEU" target="_blank"><img src="./img/videos/pontotrico12.png"></a>', tipo: 'ponto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=O-2LgRVcKMs" target="_blank"><img src="./img/videos/pontotrico11.png"></a>', tipo: 'ponto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=tY2i2rBDYg8" target="_blank"><img src="./img/videos/pontotrico10.png"></a>', tipo: 'ponto', tecnica: 'trico' },
+        { video: '<a href="https://www.youtube.com/watch?v=CDa9F6Wo9cQ" target="_blank"><img src="./img/videos/tricotrosa.png"></a>', tipo: 'projeto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=eB5r2d0psVI" target="_blank"><img src="./img/videos/pontotrico9.png"></a>', tipo: 'ponto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=knruDW1ZAAU" target="_blank"><img src="./img/videos/pontotrico8.png"></a>', tipo: 'ponto', tecnica: 'trico' },
         { video: '<a href="https://www.youtube.com/watch?v=2Bab4X2k_xk" target="_blank"><img src="./img/videos/pontotrico7.png"></a>', tipo: 'ponto', tecnica: 'trico' },
@@ -125,17 +126,7 @@
         { video: '<a href="https://www.youtube.com/watch?v=9te70F9HGxU" target="_blank"><img src="./img/videos/pontotrico1.png"></a>', tipo: 'ponto', tecnica: 'trico' },
     ]
 
-    function ver_tudo() {
-        var mostrar = ''
-
-        for (indice = 0; indice < videos.length; indice++) {
-            var ver = videos[indice]
-            mostrar += ver.video
-        }
-
-        div_videos.innerHTML = mostrar
-
-    }
+    var ver = ''
 
     function filtrar() {
         var mostrar = ''
@@ -143,77 +134,127 @@
         var filtro = sel_filtro.value
 
         if (filtro == 1) {
-            for (indice = 0; indice < videos.length; indice++) {
-                var verificar = videos[indice]
+            // VERIFICA SE QUER VER PONTO OU PROJETO
+            if (ver == 'projeto') {
 
-                if (verificar.tecnica == 'trico') {
-                    mostrar += verificar.video
+                for (indice = 0; indice < videos.length; indice++) {
+                    var verificar = videos[indice]
+
+                    if (verificar.tecnica == 'trico' && verificar.tipo == 'projeto') {
+                        mostrar += verificar.video
+                    }
                 }
             }
-        } else if (filtro == 2) {
-            for (indice = 0; indice < videos.length; indice++) {
-                var verificar = videos[indice]
 
-                if (verificar.tecnica == 'croche') {
-                    mostrar += verificar.video
+            if (ver == 'ponto') {
+                for (indice = 0; indice < videos.length; indice++) {
+                    var verificar = videos[indice]
+
+                    if (verificar.tecnica == 'trico' && verificar.tipo == 'ponto') {
+                        mostrar += verificar.video
+                    }
+                }
+
+            }
+
+        } else if (filtro == 2) {
+            // VER TUTORIAIS DE CROCHE
+            if (ver == 'projeto') {
+
+                for (indice = 0; indice < videos.length; indice++) {
+                    var verificar = videos[indice]
+
+                    if (verificar.tecnica == 'croche' && verificar.tipo == 'projeto') {
+                        mostrar += verificar.video
+                    }
+                }
+            }
+
+            if (ver == 'ponto') {
+
+                for (indice = 0; indice < videos.length; indice++) {
+                    var verificar = videos[indice]
+
+                    if (verificar.tecnica == 'croche' && verificar.tipo == 'ponto') {
+                        mostrar += verificar.video
+                    }
                 }
             }
         } else {
+            
+            if (ver == 'projeto') {
+
+                for (indice = 0; indice < videos.length; indice++) {
+                    var verificar = videos[indice]
+
+                    if (verificar.tipo == 'projeto') {
+                        mostrar += verificar.video
+                    }
+                }
+            }
+
+            if (ver == 'ponto') {
+
+                for (indice = 0; indice < videos.length; indice++) {
+                    var verificar = videos[indice]
+
+                    if (verificar.tipo == 'ponto') {
+                        mostrar += verificar.video
+                    }
+                }
+            }
+
+            div_videos.innerHTML = mostrar
+        }
+    }
+
+        function ver_projetos() {
+            var mostrar = ''
+            ver = 'projeto'
             for (indice = 0; indice < videos.length; indice++) {
                 var verificar = videos[indice]
-                mostrar += verificar.video
+
+                if (verificar.tipo == 'projeto') {
+                    mostrar += verificar.video
+                }
             }
+            div_videos.innerHTML = mostrar
         }
 
-        div_videos.innerHTML = mostrar
-    }
+        function ver_pontos() {
+            var mostrar = ''
+            ver = 'ponto'
 
-    function ver_projetos() {
-        var mostrar = ''
+            for (indice = 0; indice < videos.length; indice++) {
+                var verificar = videos[indice]
 
-        for (indice = 0; indice < videos.length; indice++) {
-            var verificar = videos[indice]
-
-            if (verificar.tipo == 'projeto') {
-                mostrar += verificar.video
+                if (verificar.tipo == 'ponto') {
+                    mostrar += verificar.video
+                }
             }
+            div_videos.innerHTML = mostrar
+
         }
-        div_videos.innerHTML = mostrar
-    }
 
-    function ver_pontos() {
-        var mostrar = ''
+        function aleatorio() {
 
-        for (indice = 0; indice < videos.length; indice++) {
-            var verificar = videos[indice]
+            var qtdVideos = videos.length
 
-            if (verificar.tipo == 'ponto') {
-                mostrar += verificar.video
+            var sorteio = parseInt(Math.random() * qtdVideos)
+
+            for (sorteado = 0; sorteado != sorteio; sorteado++) {
+                div_sorteio.style.display = "flex"
+
+                // div_sorteio.innerHTML += '<h3>Aleatório</h3>'
+                // div_sorteio.innerHTML += '<p>Este foi o seu tutorial sorteado</p>'
+                div_sorteio.innerHTML = `${videos[sorteado].video}`
+                // div_imagens.img.display = 'block'
             }
-        }
-        div_videos.innerHTML = mostrar
 
-    }
-
-    function aleatorio() {
-
-        var qtdVideos = videos.length
-
-        var sorteio = parseInt(Math.random() * qtdVideos)
-
-        for (sorteado = 0; sorteado != sorteio; sorteado++) {
-            div_sorteio.style.display = "flex"
-
-            // div_sorteio.innerHTML += '<h3>Aleatório</h3>'
-            // div_sorteio.innerHTML += '<p>Este foi o seu tutorial sorteado</p>'
-            div_sorteio.innerHTML = `${videos[sorteado].video}`
-            // div_imagens.img.display = 'block'
         }
 
-    }
-
-    function fechar() {
-        div_sorteio.display = "none"
-    }
+        function fechar() {
+            div_sorteio.display = "none"
+        }
 
 </script>

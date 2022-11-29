@@ -20,4 +20,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.post("/verificar-resposta", function (req, res) {
+    usuarioController.verificarResposta(req, res);
+});
+
 module.exports = router;
