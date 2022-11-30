@@ -18,7 +18,7 @@
     <!-- ---------------------------------------- -->
 
     <title>Conte sua história</title>
-    <link rel="icon" href="img/iconelogo.png"/>
+    <link rel="icon" href="img/iconelogo.png" />
 </head>
 
 <body onload="validarSessao(), atualizarFeed()">
@@ -46,17 +46,18 @@
     <div class="conteudo_comentario">
 
         <div class="comentarios">
-            <img src="./img/gxy5_h09j_210729.jpg" height="200px" alt="">
+            <!-- <img src="./img/gxy5_h09j_210729.jpg" height="200px" alt=""> -->
 
             <div class="container">
 
                 <div id="div_introducao">
 
-                    <h1>----------------- Conte sua história ---------------</h1>
+                    <h1>-------------------------------- Conte sua história ----------------------------</h1>
                     <p>O que faz você fazer crochê ou tricô? Cada um de nós tem sua história com essa arte, seja por
                         hobby ou trabalho. Por que você começou a fazer? Quando? Tem algum laço afetivo? Isso desperta
-                        em você algo especial? Abra seu coração para a nossa comunidade sempre que estiver precisando!</p>
-                    <h1>---------------------------------------------------------<h1>
+                        em você algo especial? Abra seu coração para a nossa comunidade sempre que estiver precisando!
+                    </p>
+                    <h1>-------------------------------------------------------------------------------------<h1>
                 </div>
 
             </div>
@@ -64,24 +65,25 @@
         </div>
 
         <div class="comentar">
-
+            
             <div id="div_postagem">
-                <!-- <img src="./img/gxy5_h09j_210729.jpg" height="200px" alt=""> -->
+                <img src="./img/gxy5_h09j_210729.jpg" width="250px" alt="">
+                <div class="caixa">
 
-                <div class="caixa"> 
-                    <h3> Agora é a sua vez <span id="b_usuario">usuário</span>!</h3>
-                    
-                    <div id="div_comentario">
-                        <img src="./img/usuario.png" height="100px">
-                        
-                        <div class="form_postagem">
-                            <form id="form_comentario" method="post" onsubmit="return publicar()">
-                                <textarea placeholder="Conte nos sobre a sua história" name="comentario" id="textarea_comentario" maxlength="500" rows="5"></textarea>
-                                <br>
-                                <button>Enviar</button>
-                            </form>
-                        </div>
-                    </div> 
+                    <div id="informacoes_usuario">
+                        <img src="./img/usuario.png" height="80px">
+                        <h3> <span id="b_usuario"></span></h3><br>
+                        <h4> <span id="b_usuario"></span></h4>
+                    </div>
+
+                    <div class="form_postagem">
+                        <form id="form_comentario" method="post" onsubmit="return publicar()">
+                            <textarea placeholder="Conte nos sobre a sua história" name="comentario"
+                                id="textarea_comentario" maxlength="500" rows="5"></textarea>
+                            <br>
+                            <button>Enviar</button>
+                        </form>
+                    </div>
 
                 </div>
             </div>
@@ -174,22 +176,26 @@
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
+                        var foto = document.createElement('img')
+                        var divDados = document.createElement("div");
                         var spanNome = document.createElement("span");
                         var divComentario = document.createElement("div");
 
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idUsuario + "</b><br>";
+                        foto.src = './img/usuario.png'
                         spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divComentario.innerHTML = publicacao.comentario;
 
                         divPublicacao.className = "publicacao";
+                        foto.id = 'foto_comentario'
                         spanNome.className = "publicacao-nome";
+                        divDados.className = 'texto'
                         divComentario.className = "publicacao-comentario";
 
-                        divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(divComentario);
+                        divPublicacao.appendChild(foto);
+                        divPublicacao.appendChild(divDados);
+                        divDados.appendChild(spanNome);
+                        divDados.appendChild(divComentario);
                         feed.appendChild(divPublicacao);
                     }
 
