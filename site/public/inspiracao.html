@@ -46,10 +46,10 @@
         <div class="filtros">
             <!-- FILTRO -->
             <div class="filtro">
-                <div><button onclick="ver_tudo()">Tudo</button></div>
-                <div><button onclick="ver_acessorios()">Acessórios</button></div>
-                <div><button onclick="ver_bolsas()">Bolsas</button></div>
-                <div><button onclick="ver_roupas()">Roupas</button></div>
+                <div><button onclick="ver_tudo()" id="button_tudo">Tudo</button></div>
+                <div><button onclick="ver_acessorios()" id="button_acessorios">Acessórios</button></div>
+                <div><button onclick="ver_bolsas()" id="button_bolsas">Bolsas</button></div>
+                <div><button onclick="ver_roupas()" id="button_roupas">Roupas</button></div>
             </div>
         </div>
 
@@ -110,6 +110,10 @@
         '<img src="./img/inspiracao/roupas/blusao1.jpg">',
         '<img src="./img/inspiracao/roupas/blusinha2.jpg">']
 
+    var botao1 = document.getElementById("button_tudo")
+    var botao2 = document.getElementById("button_acessorios")
+    var botao3 = document.getElementById("button_bolsas")
+    var botao4 = document.getElementById("button_roupas")
 
     function ver_tudo() {
         div_imagens.innerHTML = ''
@@ -126,6 +130,14 @@
             div_imagens.innerHTML += roupas[indice]
         }
 
+        // MUDAR COR DOS BOTOES
+        botao1.style.backgroundColor = 'rgb(236, 206, 232)';
+
+        botao2.style.backgroundColor = '#f3baba';
+
+        botao3.style.backgroundColor = '#f3baba';
+
+        botao4.style.backgroundColor = '#f3baba';
     }
 
     function ver_acessorios() {
@@ -134,6 +146,15 @@
         for (indice = 0; indice < acessorios.length; indice++) {
             div_imagens.innerHTML += acessorios[indice]
         }
+
+        // MUDAR COR DOS BOTOES
+        botao1.style.backgroundColor = '#f3baba';
+
+        botao2.style.backgroundColor = 'rgb(236, 206, 232)';
+
+        botao3.style.backgroundColor = '#f3baba';
+
+        botao4.style.backgroundColor = '#f3baba';
     }
 
     function ver_bolsas() {
@@ -142,6 +163,15 @@
         for (indice = 0; indice < bolsas.length; indice++) {
             div_imagens.innerHTML += bolsas[indice]
         }
+
+        // MUDAR COR DOS BOTOES
+        botao1.style.backgroundColor = '#f3baba';
+
+        botao2.style.backgroundColor = '#f3baba';
+
+        botao3.style.backgroundColor = 'rgb(236, 206, 232)';
+
+        botao4.style.backgroundColor = '#f3baba';
     }
 
     function ver_roupas() {
@@ -150,5 +180,14 @@
         for (indice = 0; indice < roupas.length; indice++) {
             div_imagens.innerHTML += roupas[indice]
         }
+
+        // MUDAR COR DOS BOTOES
+        botao1.style.backgroundColor = '#f3baba';
+
+        botao2.style.backgroundColor = '#f3baba';
+
+        botao3.style.backgroundColor = '#f3baba';
+
+        botao4.style.backgroundColor = 'rgb(236, 206, 232)';
     }
 </script>

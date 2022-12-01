@@ -30,25 +30,16 @@ primary key (idResposta, fkUsuario)
 insert into usuario values
 (null,'viviana','viviana@gmail.com','senha');
 
--- selecionar nome de usuario comentario;
-select usuario.nome,comentario.comentario from usuario join comentario on idUsuario = fkUsuario;
-select usuario.nome,resposta.* from resposta join usuario on idUsuario = fkUsuario;
-
-select*from usuario join comentario on idUsuario = fkUsuario;
-delete from usuario where idUsuario=3;
-
 -- Mostrar dados de cada tabela separadamente;
 select*from usuario;
 select*from comentario;
 select*from resposta;
 
-select tecnica ,count(tecnica) as qtd_respostas from resposta group by tecnica order by qtd_respostas;
+-- selecionar nome de usuario e os comentarios;
+select usuario.nome,comentario.comentario from usuario join comentario on idUsuario = fkUsuario;
 
-select*from comentario;
-
-insert into resposta values(null,"Acessorios","Trico","Os dois",1);
-
-select*from resposta;
+-- selecionar nome do usuario e sua resposta na pesquisa
+select usuario.nome,resposta.* from resposta join usuario on idUsuario = fkUsuario;
 
 -- Selecionar quantidade de cada categoria
 select categoria ,count(categoria) as qtd_respostas  from resposta group by categoria order by qtd_respostas; 
@@ -59,7 +50,3 @@ select objetivo ,count(objetivo) as qtd_respostas from resposta group by objetiv
 
 -- Exibir quantidade de respostas de um usuario
 select ifnull(count(*), 0) as quantidade from usuario u join resposta r on u.idUsuario = r.fkusuario where u.idUsuario = 1;
-
-show tables;
-
-desc comentario;

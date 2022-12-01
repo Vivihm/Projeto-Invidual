@@ -28,6 +28,7 @@
   cursor: pointer;
 }
 
+
 .select:hover {
   cursor: pointer;
 
@@ -82,15 +83,15 @@
 
 #div_sorteio {
   display: none;
-  /* padding: 1vw; */
   background-color: #f3baba;
   color: black;
   position: fixed;
-  /* border-radius: 1vw; */
-  width: 70%;
+  width: 50%;
   height: 60%;
-  margin: 2vw 2vw 2vw 12vw;
+  margin: 2vw 2vw 2vw 25vw;
   border: #111011 3px solid;
+  text-align: center;
+
 }
 
 #fechar{
@@ -98,18 +99,19 @@
 }
 
 #div_sorteio button {
-  margin-left: 67vw;
-  background-color: #111011;
-  color: white;
+  margin-left: 47.2vw;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
   padding: 0.5vw;
+  border: solid 2px white;
   cursor: pointer;
 }
 
 #div_sorteio button:hover{
-  background-color: white;
-  color: #f3baba;
+  background-color: #f3baba;
+  color: #000000;
 }
 
 #div_sorteio img {
-  margin: 6vw 25vw;
+  margin: 2vw 13vw;
 }
