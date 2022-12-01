@@ -19,7 +19,7 @@
   <!-- ---------------------------------------- -->
 
   <title>Meu perfil</title>
-  <link rel="icon" href="img/iconelogo.png"/>
+  <link rel="icon" href="img/iconelogo.png" />
 
 </head>
 
@@ -59,7 +59,7 @@
   <!-- PESQUISA -->
   <div id="div_pesquisa">
 
-    <div id="caixa_pesquisa" >
+    <div id="caixa_pesquisa">
 
       <h1>PESQUISA</h1>
       Ajude o Inspiragu a entender mais sobre você. <br> Responda a nossa pesquisa! É rapidinho!
@@ -95,12 +95,23 @@
       <button class="botao" onclick="responder()">Responder</button>
     </div>
 
-    <div class="graficos">
-      <!--CANVAS-->
-      <canvas id="grafico1"  style="display: none; width: 20px;"></canvas>
-      <canvas id="grafico2" style="width: 20px; display: none;"></canvas>
-      <canvas id="grafico3" style="width: 20px; display: none;"></canvas>
+    <!--CANVAS-->
+
+    <div class="caixa_graficos">
+
+      <div id="introducao_grafico" style="display: none;">
+        <h2>Nós da Inspiracrô agradecemos a sua participação!</h2>
+        <h4>Veja abaixo os gráficos sobre a pesquisa.</h4>
+      </div>
+      
+      <div class="graficos">
+        <canvas id="grafico1" style="display: none; width: 20px;"></canvas>
+        <canvas id="grafico2" style="width: 20px; display: none;"></canvas>
+        <canvas id="grafico3" style="width: 20px; display: none;"></canvas>
+      </div>
+
     </div>
+
   </div>
 
 </body>
@@ -109,7 +120,7 @@
 
 <script>
   window.onload = obterVariosGraficos()
-  
+
   function obterVariosGraficos() {
     console.log("obter varios")
 
@@ -121,29 +132,42 @@
 
     validarSessao()
 
+    verificarResposta()
   }
 
-  
+
   // -----------------------------------COLOCAR DADOS NO BD ----------------------------------------------
 
- 
+  function verificarResposta() {
+    var verificacao = sessionStorage.RESPONDEU;
+
+    if(verificacao == 'SIM') {
+      caixa_pesquisa.style.display = 'none'
+
+      introducao_grafico.style.display = 'block'
+      grafico1.style.display = 'block'
+        grafico2.style.display = 'block'
+        grafico3.style.display = 'block'
+    } 
+  }
+
   function responder() {
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo        
     var resposta1Var = sel_resposta1.value
     var resposta2Var = sel_resposta2.value
     var resposta3Var = sel_resposta3.value
-    
+
     var idUsuario = sessionStorage.ID_USUARIO;
     // var respondeu = sessionStorage.RESPONDEU;
-    
+
     if (resposta1Var == "" || resposta2Var == "" || resposta3Var == "") {
       alert('Escolha uma opção para todas as perguntas!')
       return false;
     }
-    
+
     // Enviando o valor da nova input
-    
+
     fetch(`/pesquisa/responder/${idUsuario}`, {
       method: "POST",
       headers: {
@@ -157,11 +181,12 @@
         resposta3Server: resposta3Var,
       })
     }).then(function (resposta) {
-      
+
       console.log("resposta: ", resposta);
-      
+
       if (resposta.ok) {
         caixa_pesquisa.style.display = 'none'
+        introducao_grafico.style.display = 'block'
         grafico1.style.display = 'block'
         grafico2.style.display = 'block'
         grafico3.style.display = 'block'

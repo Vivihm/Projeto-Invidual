@@ -1,5 +1,6 @@
-create database inspiragu;
-use inspiragu;
+create database inspiracro;
+
+use inspiracro;
 
 create table usuario (
 	idUsuario int primary key auto_increment,
@@ -38,26 +39,27 @@ delete from usuario where idUsuario=3;
 
 -- Mostrar dados de cada tabela separadamente;
 select*from usuario;
+select*from comentario;
+select*from resposta;
 
 select tecnica ,count(tecnica) as qtd_respostas from resposta group by tecnica order by qtd_respostas;
 
-create table teste (idTeste int primary key auto_increment, teste varchar(50));
-select * from teste;
-
 select*from comentario;
-
 
 insert into resposta values(null,"Acessorios","Trico","Os dois",1);
 
 select*from resposta;
 
 -- Selecionar quantidade de cada categoria
-
-select categoria ,count(categoria) as qtd_respostas from resposta group by categoria order by qtd_respostas; 
+select categoria ,count(categoria) as qtd_respostas  from resposta group by categoria order by qtd_respostas; 
 
 select tecnica ,count(tecnica) as qtd_respostas from resposta group by tecnica order by qtd_respostas;
 
 select objetivo ,count(objetivo) as qtd_respostas from resposta group by objetivo order by qtd_respostas;
- 
+
+-- Exibir quantidade de respostas de um usuario
+select ifnull(count(*), 0) as quantidade from usuario u join resposta r on u.idUsuario = r.fkusuario where u.idUsuario = 1;
 
 show tables;
+
+desc comentario;

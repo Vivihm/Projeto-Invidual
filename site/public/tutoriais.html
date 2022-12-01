@@ -21,8 +21,10 @@
 </head>
 
 <body onload="ver_projetos()">
-    <!-- HEADER -->
-    <div class="header">
+
+
+        <!-- HEADER -->
+        <div class="header">
         <div id="logo"><a href="index.html"><img src="./img/logo2.png" width="150px"></a></div>
         <div class="navbar">
             <ul>
@@ -33,13 +35,13 @@
                 <li><a href="inspiracao.html">INSPIRE-SE</a></li>
                 <li>|</li>
                 <li><a href="comentarios.html">COMENTÁRIOS</a></li>
-
+                
                 <li><a href="perfil.html">Perfil</a></li>
-
+                
             </ul>
         </div>
     </div>
-
+    
     <div class="conteudo_tutoriais">
         <div class="botoes">
             <select id="sel_filtro" onchange="filtrar()">
@@ -48,23 +50,29 @@
                 <option value="2">Crochê</option>
             </select>
             <button id='botao_projeto' onclick="ver_projetos()">Projetos</button>
-            <button onclick="ver_pontos()">Pontos</button>
+            <button onclick="ver_pontos()" class="button_pontos">Pontos</button>
             <button onclick="aleatorio()">Aleatório</button>
         </div>
-
-
+        
+        
         <!-- SORTEIO -->
         <div id="div_sorteio">
-            <button onclick="fechar()">fechar</button>
+            <div id="fechar">
+                <button onclick="fechar()">X</button>
+            </div>
+            <div id="div_mensagem">
+                <h2>TUTORIAL SORTEADO</h2>
+                Vai aceitar o desafio?
+            </div>
             <div id="div_video"></div>
         </div>
-
+        
         <!-- TUTORIAIS -->
         <div id="div_tutoriais">
             <div id="div_videos" style="width:100%;"></div>
         </div>
     </div>
-
+    
 </body>
 
 </html>
@@ -236,27 +244,25 @@
         }
         div_videos.innerHTML = mostrar
 
+        var botao = document.getElementsByClassName("button_pontos")
+        botao.style.background = 'color:red';
     }
 
     function aleatorio() {
-
+    
         var qtdVideos = videos.length
 
         var sorteio = parseInt(Math.random() * qtdVideos)
 
         for (sorteado = 0; sorteado != sorteio; sorteado++) {
-            div_sorteio.style.display = "flex"
-
-            // div_sorteio.innerHTML += '<h3>Aleatório</h3>'
-            // div_sorteio.innerHTML += '<p>Este foi o seu tutorial sorteado</p>'
-            div_sorteio.innerHTML = `${videos[sorteado].video}`
-            // div_imagens.img.display = 'block'
+            div_sorteio.style.display = "block"
+            div_video.innerHTML = `${videos[sorteado].video}`
         }
 
     }
 
     function fechar() {
-        div_sorteio.display = "none"
+        div_sorteio.style.display = "none"
     }
 
 </script>

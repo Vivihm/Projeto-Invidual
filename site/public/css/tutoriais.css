@@ -1,39 +1,39 @@
-.conteudo_tutoriais{
-   background-image: url(../img/60286.jpg);
-   background-repeat: no-repeat cover;
+.conteudo_tutoriais {
+  background-image: url(../img/60286.jpg);
+  background-repeat: no-repeat cover;
 }
 
-.menu_tutoriais{
-    display: flex;
-    justify-content: center;
+.menu_tutoriais {
+  display: flex;
+  justify-content: center;
 }
 
-#div_aleatorio{
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: space-around;
+#div_aleatorio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
 
 /* FILTRO */
-.botoes select{
+.botoes select {
   width: 10vw;
   background-color: #f3baba;
   padding: 0.2vw 1vw;
   border-radius: 2vw;
   font-size: 14px;
-  border: solid 2px black; 
+  border: solid 2px black;
   font-family: 'Barlow', sans-serif;
   box-shadow: 2px 4px 4px black;
   cursor: pointer;
 }
 
-.select:hover{
+.select:hover {
   cursor: pointer;
 
 }
 
-.botoes{
+.botoes {
   margin-left: 25vw;
   margin-right: 25vw;
   padding: 0.8vw;
@@ -44,7 +44,7 @@ justify-content: space-around;
   justify-content: space-around;
 }
 
-.botoes button{
+.botoes button {
   font-family: 'Barlow', sans-serif;
   width: 10vw;
   background-color: #f3baba;
@@ -55,13 +55,14 @@ justify-content: space-around;
 
 }
 
-.botoes button:hover{
+.botoes button:hover {
   background-color: rgb(236, 206, 232);
   cursor: pointer;
 }
+
 /* TUTORIAIS */
 
-#div_tutoriais{
+#div_tutoriais {
   display: flex;
   align-items: center;
 }
@@ -70,30 +71,45 @@ justify-content: space-around;
   margin: 1vw 6vw;
   columns: 4 60px;
   column-gap: 0.8vw;
-  
+
 }
+
 #div_videos img {
-  transition: transform 0.9s ease;
   margin-bottom: 1vw;
-}
-#div_videos img:hover {
-  transform: scale(1.1);
 }
 
 /* sorteio */
-.sorteio{
-    display: flex;
-    justify-content: center;
-    
-  }
 
 #div_sorteio {
-    display: none;
-    background-color: #f3baba;
-    color: black;
-    position: fixed;
-    border-radius: 1vw;
-    border: #111011 3px solid;
-    padding: 2vw 3vw;
+  display: none;
+  /* padding: 1vw; */
+  background-color: #f3baba;
+  color: black;
+  position: fixed;
+  /* border-radius: 1vw; */
+  width: 70%;
+  height: 60%;
+  margin: 2vw 2vw 2vw 12vw;
+  border: #111011 3px solid;
+}
 
-  }
+#fechar{
+  background-color: white;
+}
+
+#div_sorteio button {
+  margin-left: 67vw;
+  background-color: #111011;
+  color: white;
+  padding: 0.5vw;
+  cursor: pointer;
+}
+
+#div_sorteio button:hover{
+  background-color: white;
+  color: #f3baba;
+}
+
+#div_sorteio img {
+  margin: 6vw 25vw;
+}

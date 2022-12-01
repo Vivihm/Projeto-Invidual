@@ -72,8 +72,21 @@ option {
 }
 
 /* GRAFICOS */
+
+.caixa_graficos{
+    display: flex;
+flex-direction: column;
+
+}
+
 .graficos{
     display: flex;
     flex-direction: row;
     width: 19vw;
+}
+
+#introducao_grafico{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }

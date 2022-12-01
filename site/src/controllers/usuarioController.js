@@ -97,15 +97,6 @@ function cadastrar(req, res) {
 function verificarResposta(req, res) {
     var fkUsuario = req.body.fkUsuarioServer;
 
-    if(fkUsuario == 'SIM') {
-        caixa_pesquisa.style.display = 'none'
-      } else{ 
-        caixa_pesquisa.style.display = ''
-        grafico1.style.display = 'block'
-        grafico2.style.display = 'block'
-        grafico3.style.display = 'block'
-      }
-
     usuarioModel.verificarResposta(fkUsuario)
         .then(function (resposta) {
             return res.json(resposta);
