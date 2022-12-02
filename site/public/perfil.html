@@ -38,7 +38,6 @@
         <div style="background-color: white; padding: 0.1vw; border-radius: 0.5vw;">
           <li><a href="perfil.html">Perfil</a></li>
         </div>
-
         <li><a onclick="limparSessao()">Sair</a></li>
       </ul>
     </div>
@@ -47,11 +46,11 @@
   <!-- USUARIO -->
   <div class="caixa_perfil">
     <div id="div_perfil">
-      <div><img src="./img/usuario.png" width="100px"></div>
+      <div id="foto_perfil"><img src="./img/usuario.png" width="150px"></div>
       <div id="div_informacoes">
-        <h3><span id="b_usuario"></span></h3>
-        <h4>Apaixonada por crochê</h4>
-        <div id="redes">Redes sociais:<img src="./img/instagram.png" width="30px"></div>
+        <h2><span id="b_usuario"></span></h2>
+        <p><span id="b_email"></span></p>
+        <p>Apaixonada por crochê</p>
       </div>
     </div>
   </div>
@@ -61,8 +60,8 @@
 
     <div id="caixa_pesquisa">
 
-      <h1>PESQUISA</h1>
-      Ajude o Inspiragu a entender mais sobre você. <br> Responda a nossa pesquisa! É rapidinho!
+      <h1>-------------------------------- PESQUISA --------------------------------</h1>
+      <p>Ajude o Inspiragu a entender mais sobre você. <br> Responda a nossa pesquisa! É rapidinho!</p>
 
       <div class="questao1">
         <h3>O que você mais gosta de fazer?</h3>
@@ -92,7 +91,7 @@
           <option value="Os dois">Os dois</option>
         </select>
       </div>
-      <button class="botao" onclick="responder()">Responder</button>
+      <button id="botao" onclick="responder()">Responder</button>
     </div>
 
     <!--CANVAS-->
@@ -101,13 +100,13 @@
 
       <div id="introducao_grafico" style="display: none;">
         <h2>Nós da Inspiracrô agradecemos a sua participação!</h2>
-        <h4>Veja abaixo os gráficos sobre a pesquisa.</h4>
+        <h4>Veja abaixo os gráficos sobre a pesquisa de preferências</h4>
       </div>
       
       <div class="graficos">
-        <canvas id="grafico1" style="display: none; width: 20px;"></canvas>
-        <canvas id="grafico2" style="width: 20px; display: none;"></canvas>
-        <canvas id="grafico3" style="width: 20px; display: none;"></canvas>
+        <canvas id="grafico1" style="display: none; width: 25px;"></canvas>
+        <canvas id="grafico2" style="width: 25px; display: none;"></canvas>
+        <canvas id="grafico3" style="width: 25px; display: none;"></canvas>
       </div>
 
     </div>
@@ -159,7 +158,6 @@
     var resposta3Var = sel_resposta3.value
 
     var idUsuario = sessionStorage.ID_USUARIO;
-    // var respondeu = sessionStorage.RESPONDEU;
 
     if (resposta1Var == "" || resposta2Var == "" || resposta3Var == "") {
       alert('Escolha uma opção para todas as perguntas!')

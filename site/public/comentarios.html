@@ -37,6 +37,9 @@
                     <li><a href="comentarios.html">COMENTÁRIOS</a></li>
                 </div>
                 <li><a href="perfil.html">Perfil</a></li>
+
+                <li><a onclick="limparSessao()">Sair</a></li>
+
             </ul>
         </div>
     </div>
@@ -46,7 +49,6 @@
     <div class="conteudo_comentario">
 
         <div class="comentarios">
-            <!-- <img src="./img/gxy5_h09j_210729.jpg" height="200px" alt=""> -->
 
             <div class="container">
 
@@ -65,15 +67,18 @@
         </div>
 
         <div class="comentar">
-            
+
             <div id="div_postagem">
-                <img src="./img/gxy5_h09j_210729.jpg" width="250px" alt="">
+                <img src="./img/gxy5_h09j_210729.jpg" width="300px" alt="">
                 <div class="caixa">
 
                     <div id="informacoes_usuario">
                         <img src="./img/usuario.png" height="80px">
-                        <h3> <span id="b_usuario"></span></h3><br>
-                        <h4> <span id="b_usuario"></span></h4>
+                        <div id="nome">
+                            <h2>@<span id="b_usuario"></span></h2>
+                            <p><span id="b_email"></span></p>
+
+                        </div>
                     </div>
 
                     <div class="form_postagem">
@@ -81,7 +86,9 @@
                             <textarea placeholder="Conte nos sobre a sua história" name="comentario"
                                 id="textarea_comentario" maxlength="1000" rows="5"></textarea>
                             <br>
-                            <button>Enviar</button>
+                            <div id="button_enviar">
+                                <button>Enviar</button>
+                            </div>
                         </form>
                     </div>
 
@@ -90,7 +97,9 @@
         </div>
 
         <div class="comentario">
-            <h1>----------------------Depoimentos------------------------------------</h1>
+            <div id="intro">
+                <h1>----------------------------------Depoimentos------------------------------------</h1>
+            </div>
             <div class="div-results">
                 <div id="feed_container" class="feed-container"></div>
             </div>
@@ -183,7 +192,7 @@
 
 
                         foto.src = './img/usuario.png'
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+                        spanNome.innerHTML = "<b>@" + publicacao.nome + "</b>";
                         divComentario.innerHTML = publicacao.comentario;
 
                         divPublicacao.className = "publicacao";

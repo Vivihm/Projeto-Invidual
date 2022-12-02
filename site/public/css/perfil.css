@@ -1,92 +1,138 @@
-body{
+body {
     background-image: url(../img/60286.jpg);
 }
 
-
-.caixa_perfil{
+.caixa_perfil {
     background-color: #f7d5d5;
-    margin: 2vw 15vw;
-    padding: 2vw;
-    border-radius: 5vw;
+    margin: 2vw 13vw;
+    padding: 1vw;
+    border-radius: 2vw;
+    border: solid 2px black;
+    box-shadow: 2px 4px 4px black;
 }
 
-#div_perfil{
+#div_perfil {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    margin-left: 5vw;
+    justify-content: start;
 }
 
-#div_informacoes{
+#foto_perfil {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 0.4vw;
+    border-radius: 1vw;
+}
+
+#div_informacoes {
     margin: 2vw;
 }
 
-#div_favoritos{
+#div_favoritos {
     background-color: #f7d5d5;
     margin: 2vw 15vw;
     padding: 2vw;
     border-radius: 5vw;
 }
 
-#div_pesquisa{
-    background-color: #f3baba;
-    margin: 1vw 20vw;
+#div_pesquisa {
+    background-color: #F8EAE4;
+    margin: 1vw 15vw;
     border-radius: 2vw;
     padding: 2vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border: solid 2px black;
+    box-shadow: 2px 4px 4px black;
+
 }
 
-#caixa_pesquisa{
+#div_pesquisa h1{
+    background-color: #f3baba;
+    border-radius: 1vw;
+    color: rgb(0, 0, 0);
+    padding: 1vw;   
+    border: solid 1px black;
+}
+#caixa_pesquisa {
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
-#caixa_pesquisa button{
+#caixa_pesquisa p{
+    font-size: larger;
+    margin-bottom: 0vw;
+}
+#caixa_pesquisa button {
     display: flex;
     justify-content: center;
-    /* display: flex
-    flex-direction: column; */
+    margin-top: 1vw;
+    margin-left: 22vw;
+    padding: 0.3vw;
+    border-radius: 1vw;
+    width: 20vw;
+    background-color: #000000;
+    color: white;
+}
+
+#caixa_pesquisa button:hover{
+    background-color: #f3baba;
+    color: black;
+    cursor: pointer;
 }
 
 select {
     width: 20vw;
     padding: 0.5vw;
     border-radius: 1vw;
-    appearance: none;
+
+}
+
+select:hover {
+    cursor: pointer;
 }
 
 option {
     width: 20vw;
     padding: 0.5vw;
     border-radius: 1vw;
-    appearance: none;
-}
-
-.botao{
-    background-color: aliceblue;
-    width: 10vw;
-    border-radius: 1vw;
 }
 
 /* GRAFICOS */
 
-.caixa_graficos{
+.caixa_graficos {
     display: flex;
-flex-direction: column;
+    flex-direction: column;
 
 }
 
-.graficos{
+.graficos {
     display: flex;
     flex-direction: row;
     width: 19vw;
+    justify-content: space-between;
 }
 
-#introducao_grafico{
+#introducao_grafico {
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: #f3baba;
+    border-radius: 2vw;
+    border: solid 2px black;
+    margin-bottom: 1vw;
+}
+
+h2{
+    margin-bottom: 0vw;
+}
+
+h4{
+    margin-top: 0vw;
 }
