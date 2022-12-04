@@ -102,11 +102,23 @@
         <h2>Nós da Inspiracrô agradecemos a sua participação!</h2>
         <h4>Veja abaixo os gráficos sobre a pesquisa de preferências</h4>
       </div>
-      
-      <div class="graficos">
-        <canvas id="grafico1" style="display: none; width: 25px;"></canvas>
-        <canvas id="grafico2" style="width: 25px; display: none;"></canvas>
-        <canvas id="grafico3" style="width: 25px; display: none;"></canvas>
+
+      <div class="graficos"><br>
+        <div id="caixa_grafico1" style="display: none;">
+          <h4>CATEGORIA</h4>
+          <canvas id="grafico1" style="width: 20vw;"></canvas>
+        </div>
+
+        <div id="caixa_grafico2" style="display: none;">
+          <h4>TÉCNICA</h4>
+          <canvas id="grafico2" style="width: 20vw;"></canvas>
+        </div>
+
+        <div id="caixa_grafico3" style="display: none;">
+          <h4>OBJETIVO</h4>
+          <canvas id="grafico3" style="width: 20vw;"></canvas>
+        </div>
+
       </div>
 
     </div>
@@ -140,14 +152,14 @@
   function verificarResposta() {
     var verificacao = sessionStorage.RESPONDEU;
 
-    if(verificacao == 'SIM') {
+    if (verificacao == 'SIM') {
       caixa_pesquisa.style.display = 'none'
 
       introducao_grafico.style.display = 'block'
-      grafico1.style.display = 'block'
-        grafico2.style.display = 'block'
-        grafico3.style.display = 'block'
-    } 
+      caixa_grafico1.style.display = 'block'
+      caixa_grafico2.style.display = 'block'
+      caixa_grafico3.style.display = 'block'
+    }
   }
 
   function responder() {
@@ -183,11 +195,12 @@
       console.log("resposta: ", resposta);
 
       if (resposta.ok) {
+        sessionStorage.RESPONDEU = 'SIM'
         caixa_pesquisa.style.display = 'none'
         introducao_grafico.style.display = 'block'
-        grafico1.style.display = 'block'
-        grafico2.style.display = 'block'
-        grafico3.style.display = 'block'
+        caixa_grafico1.style.display = 'block'
+        caixa_grafico2.style.display = 'block'
+        caixa_grafico3.style.display = 'block'
 
       } else {
         throw ("Houve um erro ao tentar cadastrar sua resposta!");

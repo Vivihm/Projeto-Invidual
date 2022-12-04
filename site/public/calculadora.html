@@ -38,30 +38,50 @@
     <div id="calculadora">
         <div id="caixa_calculadora">
 
-            <div id="div_instrucao">
-                <h2>Cálculo de quantidade de novelos para projetos quadrados</h2>
-                1-Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
-                2-Pese em uma balança quantos gramas essa amostra tem<br>
-                3- Insira os valores nos campos abaixo
-            </div>
-
+            
             <div id="div_calculo">
                 <div id="div_imagem">
-                    <img src="./img/7sfe_72lp_200510.jpg" width="100px">
+                    <img src="./img/7sfe_72lp_200510.jpg" width="250px">
                 </div>
-
+                
+                
                 <div id="funcao_calculadora">
+                   
+                    <div id="div_instrucao">
+                        <h1>Cálculo de quantidade de novelos</h1>
+                        <div id="instrucoes">
+                            <b> 1-</b>  Faça uma amostra 10cmx10cm com o material e ponto que você vai usar no projeto<br>
+                            <b> 2-</b>  Pese em uma balança quantos gramas essa amostra tem<br>
+                            <b> 3-</b>  Insira os valores nos campos abaixo
+                        </div>
+                    </div>
 
-                    <h2>Cálculo:</h2><br>
-                    <b>Amostra</b> <br>
-                    Área: 100m² <br> Gramas: <input placeholder="Peso em gramas da amostra" id="in_amostra"> <br>
-                    <b>Projeto</b><br>
-                    Altura: <input placeholder="em cm" id="in_altura"> Largura: <input placeholder="em cm"
-                        id="in_largura"><br>
+                    <div id="amostra">
+                        <h3>
+                            <b>Amostra</b>
+                        </h3>
 
-                    <b>Novelo</b><br>
-                    Quantos gramas tem um novelo da lã que você pretende usar?<br>
-                    <input id="in_gramas">
+                        <b>Área:</b>100cm²
+
+                        <b>Gramas: </b> <input placeholder="Peso em gramas da amostra" id="in_amostra">
+                    </div>
+
+
+                    <div id="projeto">
+                        <h3>
+                            <b>Projeto</b>
+                        </h3>
+                        <b>Altura:</b> <input placeholder="em cm" id="in_altura"> 
+                        <b>Largura:</b> <input placeholder="em cm" id="in_largura"><br>
+                    </div>
+
+                    <div id="novelo">
+                        <h3>
+                            <b>Novelo</b>
+                        </h3>
+                        Quantos gramas tem um novelo da lã que você pretende usar?<br>
+                        <input id="in_gramas">
+                    </div>
 
                     <button onclick="calcular()">Calcular</button>
 
@@ -73,7 +93,7 @@
     </div>
 
     <div class="footer">
-        InspirAgu - copyright 2022. Todos os direitos reservados. Desenvolvido por Viviana Marca
+        Inspiracrô - copyright 2022. Todos os direitos reservados. Desenvolvido por Viviana Marca
     </div>
 
 </body>
@@ -94,6 +114,6 @@
         var gramasNovelo = Number(in_gramas.value)
 
         var qtdNovelos = calculo / gramasNovelo
-        div_resposta.innerHTML = `Você vai precisar de ${qtdNovelos.toFixed()} novelos`
+        div_resposta.innerHTML = `<h2>Você vai precisar de ${qtdNovelos.toFixed()} novelos </h2>`
     }
 </script>

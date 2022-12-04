@@ -81,6 +81,9 @@
 
 #div_videos img:hover{
   background-color: #000000;
+  /* transform: scale(1.1); */
+  /* filter:grayscale(99%); */
+  /* transition: 1s; */
 }
 /* sorteio */
 

@@ -101,6 +101,7 @@ img:hover{
     columns: 5 50px;
     column-gap: 0.6vw;
 }
+
 #div_imagens img {
     transition: transform 0.9s ease;
 

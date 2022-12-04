@@ -117,6 +117,7 @@ option {
     flex-direction: row;
     width: 19vw;
     justify-content: space-between;
+    margin-left: 2vw;
 }
 
 #introducao_grafico {
@@ -127,6 +128,18 @@ option {
     border-radius: 2vw;
     border: solid 2px black;
     margin-bottom: 1vw;
+}
+
+.graficos h4{
+    display: flex;
+    width: 15vw;
+    justify-content: center;
+    background-color: #facfcf;
+    margin-top: 1vw;
+    margin-left: 3vw;
+    border-radius: 1vw;
+    /* border: solid 2px black; */
+
 }
 
 h2{
